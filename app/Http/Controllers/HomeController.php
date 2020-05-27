@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
+use DB;
 
 class HomeController extends Controller
 {
@@ -28,6 +30,15 @@ class HomeController extends Controller
         $user = User::find($user_id);
         $userPosts = $user->posts;
         $SortPosts = $userPosts->sortByDesc('id');
-        return view('home')->with('posts', $SortPosts);
+
+        //all posts
+        $posts = Post::all();
+
+        $data = array(
+            'posts' => $posts->sortByDesc('id'),
+            'userPosts' => $userPosts->sortByDesc('id')
+        );
+
+        return view('home', compact('data'));
     }
 }

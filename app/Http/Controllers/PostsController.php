@@ -124,8 +124,20 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post =  Post::find($id);
-        return view('posts.show')->with('post', $post);
+
+
+        $post = DB::select("select * from posts where id = '$id' ");
+
+        $posts = Post::all()->take(4); //limit 4 posts 
+
+        $data = array(
+
+            'posts' => $posts->sortByDesc('id'),
+            'userPost' => $post,
+        );
+
+
+        return view('posts.show', compact('data'));
     }
 
     /**
@@ -140,7 +152,7 @@ class PostsController extends Controller
         $post = Post::find($id);
 
         //check for correct user
-        if (auth()->user()->id !== $post->user_id) {
+        if (auth()->user()->id != $post->user_id) {
 
             return redirect('/posts')->with('error', 'Unauthorized Page');
         }
@@ -237,7 +249,7 @@ class PostsController extends Controller
         $post = Post::find($id);
 
         //check for correct user
-        if (auth()->user()->id !== $post->user_id) {
+        if (auth()->user()->id != $post->user_id) {
 
             return redirect('/posts')->with('error', 'Unauthorized Page');
         }

@@ -18,6 +18,12 @@
 <section>
     <div class="row justify-content-center">
 
+       
+       
+        @foreach($data['userPost'] as $post)
+            
+      
+
         <div class="col-sm-12 col-md-4 text-center d-flex d-md-flex justify-content-center justify-content-md-center align-items-md-center">
             
             <img class="img-fluid d-flex d-md-flex pulse animated" src="/storage/cover_images/{{$post->cover_image}}" >
@@ -66,6 +72,86 @@
                 </div>
             </div>
         </div>
+
+        @endforeach
+   
+      
+
+    </div>
+</section>
+
+<section  style="padding: 20px;">
+
+    <div class="row">
+        <div class="col" style="padding: 25px;">
+            <hr>
+            <h1 class="text-center" style="color: rgb(74,79,84);font-family: ABeeZee, sans-serif;">Related Teachers</h1>
+            <p class="text-center" style="color: rgb(7,67,81);">A good teacher can inspire hope, ignite the imagination, and instill a love of learning. Brad Henry<br></p>
+        </div>
+    </div>
+
+    <div class="row" style="padding: 10px;">
+
+         <!--************************************************************************
+                                        Posts
+           *************************************************************************-->
+
+           @if(count($data['posts']) > 0)
+           
+           @foreach($data['posts'] as $post)
+                  
+            <a href="/posts/{{$post->id}}">
+                <div class="col-md-3 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
+                <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
+
+
+                <div class="card border-white" data-bs-hover-animate="pulse" style="background-color: rgb(255,255,255);/*overflow: hidden;*/">
+
+                <img id="post_Image_Show" class="img-fluid card-img w-100 d-block " src="/storage/cover_images/{{$post->cover_image}}" style="overflow: hidden;">
+                                            
+                <div class="card-img-overlay" style="padding: 0px;">
+                 <h4 class="d-xl-flex justify-content-xl-start align-items-xl-start" style="margin: 0px;background-color: rgba(34,119,94,0.78);padding: 5px;font-size: 15px;color: rgb(235,235,235);">{{$post->subject}}</h4>
+
+                </div>
+
+                </div>
+
+                <div class="card-body text-center" style="padding: 10px;">
+
+                    <a class="card-link status" href="/posts/{{$post->id}}">
+                    <div class="overlay"></div>
+                    </a>
+
+                    <h5 class="card-title" style="margin: 0px 0px 2px 0px;font-size: 14px;">{{$post->fullName}}</h5>
+
+                    <h6 id="postPrice" class="text-muted card-subtitle mb-2" style="font-size: 12px;margin: 5px 0px 2px 0px;">{{$post->price}} LKR</h6>
+
+                    <h6 id="postDistrict" class="text-muted card-subtitle mb-2" style="font-size: 12px;margin: 2px 0px 2px 0px;">{{$post->district}}</h6>
+
+                                       
+
+                    <hr>
+
+                                            
+                    <a id="viewButton"  href="/posts/{{$post->id}}"><button class="btn btn-info btn-sm" data-bs-hover-animate="pulse" type="button">View</button></a>
+                                          
+
+                    <h6 id="viewTimeago" class="text-muted card-subtitle mb-2" style="font-size: 10px;margin: 2px 0px 2px 0px;">{{$post->created_at->diffForHumans()}}</h6>
+
+                                       
+
+                     </div>
+                </div>
+             </div>
+          </a>
+                            
+        @endforeach
+       @endif
+
+         <!--************************************************************************
+                         End of Posts
+             *************************************************************************-->
+
     </div>
 </section>
 

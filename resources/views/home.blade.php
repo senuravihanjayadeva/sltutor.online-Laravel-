@@ -51,6 +51,15 @@
                                             </div>
                                         @endif
                                         You are logged in!<br>
+
+                                        @if(count($data['posts']) > 0)
+                                        <ul>
+                                        @foreach($data['posts'] as $posts)
+                                            <li>{{$posts->fullName}}</li>
+                                        @endforeach
+                                        </ul>
+                                        @endif
+
                                         <a href="/posts/create" class="btn btn-success">Create a Post</a>
                                         
                                     </div>
@@ -66,8 +75,8 @@
                 <!--****************************************************
                             User Posts
                 ******************************************************-->
-            @if(count($posts) > 0)
-                @foreach($posts as $post)
+            @if(count($data['userPosts']) > 0)
+                @foreach($data['userPosts']  as $post)
 
                 <div class="col-md-12" data-aos="slide-up" style="margin: 10px 0 px;">
                     <div class="border rounded-0 border-info shadow" style="background-color: #ffffff;padding: 10px; margin: 10px;">

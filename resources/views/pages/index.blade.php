@@ -89,8 +89,18 @@
             <div class="container hero">
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+
+                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Login</button></a>
+                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Signin</button></a>
+
                         <h1>SLtutor</h1>
-                        <p>This is a platform where you can find teachers, notes, past papers and ask solutions for thousands of problems in your textbook </p><a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Explore Teachers</button></a></div>
+
+                        <p>This is a platform where you can find teachers, notes, past papers and ask solutions for thousands of problems in your textbook </p>
+                        
+                  
+                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Explore Teachers</button></a>
+                    
+                    </div>
                     <div
                         class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
                         <div class="iphone-mockup"><img class="device" src="/storage/assets/img/undraw_teaching_f1cm.svg"></div>
