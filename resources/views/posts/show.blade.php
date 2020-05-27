@@ -24,7 +24,7 @@
             
       
 
-        <div class="col-sm-12 col-md-4 text-center d-flex d-md-flex justify-content-center justify-content-md-center align-items-md-center">
+        <div class="col-sm-12 col-md-4">
             
             <img class="img-fluid d-flex d-md-flex pulse animated" src="/storage/cover_images/{{$post->cover_image}}" >
         
@@ -40,7 +40,7 @@
                     <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">Private(Individual) Class,Group Class<br></p>
                     <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">District -&gt;&nbsp;{{$post->district}}<br></p>
                 <p class="card-text" style="font-family: Aclonica, sans-serif;color: rgb(49,50,50);font-size: 20px;margin: 5px 0px;">Rs.{{$post->price}}<br></p>
-                <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;"><br>{{$post->description}}<br><br></p>
+                <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;"><br>{!! $post->description !!}<br><br></p>
 
                 <!--**********************************-->
 

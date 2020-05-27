@@ -21,6 +21,9 @@ Route::get('/services', 'PagesController@services');
 
 Route::resource('posts', 'PostsController');
 
+Route::resource('editor', 'CKEditorController');
+
+Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
 // Route::get('/users/{id}', function ($id) {
 //     return 'This is user ' . $id;
