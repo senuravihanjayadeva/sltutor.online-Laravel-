@@ -71,10 +71,12 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="/home">Profile</a></li>
 
                         @endguest
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Teachers</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Find Teachers</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Create Your Ad </a></li>
+                        <!--
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#">PastPapers</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#">Notes</a></li>
+                        -->
 
                     </ul>
                     <span class="navbar-text actions"> 

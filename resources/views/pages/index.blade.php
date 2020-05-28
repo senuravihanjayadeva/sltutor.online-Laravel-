@@ -52,10 +52,12 @@
                     <div class="collapse navbar-collapse"
                         id="navcol-1">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Teachers</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Find Teachers</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Create Your Ad</a></li>
+                            <!--
                             <li class="nav-item" role="presentation"><a class="nav-link" href="#">PastPapers</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="#">Notes</a></li>
+                            -->
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
                             <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
