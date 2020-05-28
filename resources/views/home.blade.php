@@ -8,7 +8,19 @@
     <div class="col-md-2 d-xl-flex align-items-xl-start">
         <section>
             <div class="row">
-                <div class="col-md-12 justify-content-between align-items-center align-self-center"><img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/cover_images/noimage.jpg" width="200px" height="200px"></div>
+                <div class="col-md-12 justify-content-between align-items-center align-self-center">
+                    
+                    @if(Auth::user()->ProfileImage)
+
+                    <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/{{ Auth::user()->ProfileImage }}" width="200px" height="200px">
+
+                    @else
+
+                    <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/noimage.jpg" width="200px" height="200px">
+
+                    @endif
+                
+                </div>
                 <div class="col-md-12">
                     <div class="card border-white">
                         <div class="card-body">
@@ -17,11 +29,15 @@
                             <p class="card-text"></p>
 
                             <center>
-                            {!!Form::open([ 'method' => 'POST' ]) !!}
+
+                            <a href="user/{{ Auth::user()->id }}/edit"><button class="btn btn-info btn-sm">Edit Account</button></a><br><br>
+
+                            
+                            {!!Form::open(['action' => ['UserController@destroy',Auth::user()->id], 'method' => 'POST' ]) !!}
 
                             {{Form::hidden('_method', 'DELETE')}}
-                            {{Form::submit('Edit',['class' => 'btn btn-danger btn-sm'])}}
-
+                            {{Form::submit('Remove',['class' => 'btn btn-danger','style' => 'margin:5px'])}}
+                        
                             {!!Form::close() !!}
                             </center>
 
@@ -125,9 +141,7 @@
 
                                         <h6 class="text-muted card-subtitle mb-2">{{$post->fullName}}</h6>
 
-                                        <p class="card-text">
-                                            {{$post->description}}
-                                        </p>
+                                     
                                         <a href="/posts/{{$post->id}}"><button class="btn btn-primary btn-sm" type="button">View</button></a>
                                     
                                     </div>

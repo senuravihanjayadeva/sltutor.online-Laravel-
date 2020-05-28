@@ -178,7 +178,7 @@
                             'Bio Systems Technology' => 'Bio Systems Technology', 
                             'Science for Technology' => 'Science for Technology', 
                             'General English' => 'General English',
-                            'Logic' => 'Logic'
+                            'Logic' => 'Logic',
                             
                             ], null,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
                         
@@ -201,7 +201,16 @@
                 <strong> 
                     {{ Form::label('description','Description') }}
                 </strong>
-                {{ Form::textarea('description','',['id'=>'article-ckeditor','class' => 'form-control']) }}
+                {{ Form::textarea('description','',['id'=>'summary-ckeditor','class' => 'form-control']) }}
+
+                <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+                <script>
+                    CKEDITOR.replace( 'summary-ckeditor', {
+                        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                        filebrowserUploadMethod: 'form'
+                    });
+                </script>
+                
             
             </div>
 

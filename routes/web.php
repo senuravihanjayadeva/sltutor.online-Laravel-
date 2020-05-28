@@ -21,6 +21,8 @@ Route::get('/services', 'PagesController@services');
 
 Route::resource('posts', 'PostsController');
 
+Route::resource('user', 'UserController');
+
 Route::resource('editor', 'CKEditorController');
 
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
