@@ -51,7 +51,7 @@
                 
             </div>
             <div class="col-md-8">
-                <h1>Create a Post</h1>
+                <h1>Edit Your Post</h1>
                 <hr>
                 <div class="form-row">
                     <div class="col-sm-12 col-md-6">
@@ -336,7 +336,7 @@
 
             <div class="col-md-12 content-right">
                 
-                {{Form::submit('POST',['class' => 'btn btn-primary form-btn'] )}}
+                {{Form::submit('Edit',['class' => 'btn btn-primary form-btn'] )}}
 
                 <button class="btn btn-danger form-btn" type="reset">CANCEL </button>
             
