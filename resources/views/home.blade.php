@@ -28,6 +28,8 @@
                             <h6 class="text-center text-muted card-subtitle mb-2" style="font-size: 12px;">{{ Auth::user()->email }}</h6>
                             <p class="card-text"></p>
 
+                             
+
                             <center>
 
                             <a href="user/{{ Auth::user()->id }}/edit"><button class="btn btn-info btn-sm">Edit Account</button></a><br><br>
@@ -59,7 +61,9 @@
                             <div class="col-md-12">
                                 <div class="card">
                                  
-                    
+                                <!--For display error message or success messages-->
+
+                                   
 
                                      <div class="card-body justify-content-center">
                                         @if (session('status'))
@@ -69,6 +73,9 @@
                                         @endif
 
                                         <center>
+
+                                            @include('inc.messages');
+                                            
                                         <div class="row">
 
                                             <div class="col-md-6" style="padding: 10px">

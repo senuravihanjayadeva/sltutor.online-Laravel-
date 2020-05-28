@@ -121,7 +121,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('/posts')->with('success', 'User Updated');
+        return redirect('/home')->with('success', 'User Updated');
     }
 
     /**
