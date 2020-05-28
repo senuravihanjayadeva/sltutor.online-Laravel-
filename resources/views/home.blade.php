@@ -74,8 +74,8 @@
 
                                         <center>
 
-                                            @include('inc.messages');
-                                            
+                                            @include('inc.messages')
+
                                         <div class="row">
 
                                             <div class="col-md-6" style="padding: 10px">
