@@ -58,26 +58,32 @@
                         <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header">Dashboard</div>
+                                 
                     
-                                    <div class="card-body justify-content-center">
+
+                                     <div class="card-body justify-content-center">
                                         @if (session('status'))
                                             <div class="alert alert-success" role="alert">
                                                 {{ session('status') }}
                                             </div>
                                         @endif
-                                        You are logged in!<br>
 
-                                        @if(count($data['posts']) > 0)
-                                        <ul>
-                                        @foreach($data['posts'] as $posts)
-                                            <li>{{$posts->fullName}}</li>
-                                        @endforeach
-                                        </ul>
-                                        @endif
+                                        <center>
+                                        <div class="row">
 
-                                        <a href="/posts/create" class="btn btn-success">Create a Post</a>
-                                        
+                                            <div class="col-md-6" style="padding: 10px">
+                                                You are logged in!
+                                            </div>
+
+
+
+                                            <div class="col-md-6" style="padding: 10px">
+                                                <a href="/posts/create" class="btn btn-success">Create a Post</a>
+                                            </div>
+
+                                        </div>
+                                        </center>
+                              
                                     </div>
                                 </div>
                             </div>

@@ -61,7 +61,16 @@
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="/">Home</a></li>
+
+                        @guest
+
+                        <!--<li class="nav-item" role="presentation"><a class="nav-link" href="/home">Profile</a></li>-->
+
+                        @else
+                        
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/home">Profile</a></li>
+
+                        @endguest
                         <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Teachers</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Create Your Ad </a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#">PastPapers</a></li>

@@ -90,15 +90,13 @@
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
 
-                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Login</button></a>
-                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Signin</button></a>
-
+                    
                         <h1>SLtutor</h1>
 
                         <p>This is a platform where you can find teachers, notes, past papers and ask solutions for thousands of problems in your textbook </p>
                         
                   
-                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Explore Teachers</button></a>
+                        <a href="/posts"><button class="btn btn-light btn-lg action-button" type="button">Explore SLTUTOR</button></a>
                     
                     </div>
                     <div
@@ -139,13 +137,13 @@
             </div>
         </footer>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
+    <script src="/storage/assets/js/jquery.min.js"></script>
+    <script src="storage/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="storage/assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-    <script src="assets/js/Profile-Edit-Form.js"></script>
-    <script src="assets/js/Simple-Slider.js"></script>
+    <script src="storage/assets/js/Profile-Edit-Form.js"></script>
+    <script src="storage/assets/js/Simple-Slider.js"></script>
 </body>
 
 </html>
