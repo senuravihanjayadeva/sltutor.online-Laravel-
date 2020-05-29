@@ -23,6 +23,8 @@ Route::resource('posts', 'PostsController');
 
 Route::resource('user', 'UserController');
 
+Route::resource('questionbank', 'QuestionBankController');
+
 Route::resource('editor', 'CKEditorController');
 
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
