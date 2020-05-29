@@ -9,6 +9,18 @@ use DB;
 
 class QuestionBankController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -54,6 +66,9 @@ class QuestionBankController extends Controller
         $question->level = $request->input('level');
         $question->subject = $request->input('subject');
         $question->body = $request->input('body');
+        $question->user_id = auth()->user()->id;
+        $question->name = auth()->user()->name;
+        $question->ProfileImage = auth()->user()->ProfileImage;
         $question->save();
 
         return redirect('/questionbank')->with('success', 'Question Created');
@@ -89,7 +104,16 @@ class QuestionBankController extends Controller
      */
     public function edit($id)
     {
-        //
+        $question = QuestionBank::find($id);
+
+        //check for correct user
+        if (auth()->user()->id != $question->user_id) {
+
+            return redirect('/questionbank')->with('error', 'Unauthorized Page');
+        }
+
+
+        return view('questionbank.edit')->with('question', $question);
     }
 
     /**
@@ -101,7 +125,29 @@ class QuestionBankController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+
+            'title' => 'required',
+            'level' => 'required',
+            'subject' => 'required',
+            'body' => 'required',
+
+
+        ]);
+
+        //update question
+        $question =  QuestionBank::find($id);
+        $question->title = $request->input('title');
+        $question->level = $request->input('level');
+        $question->subject = $request->input('subject');
+        $question->body = $request->input('body');
+        $question->user_id = auth()->user()->id;
+        $question->name = auth()->user()->name;
+        $question->ProfileImage = auth()->user()->ProfileImage;
+        $question->save();
+
+        return redirect('/questionbank/' . $id)->with('success', 'Question Updated');
     }
 
     /**
@@ -112,6 +158,16 @@ class QuestionBankController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $question = QuestionBank::find($id);
+
+        //check for correct user
+        if (auth()->user()->id != $question->user_id) {
+
+            return redirect('/questionbank')->with('error', 'Unauthorized Page');
+        }
+
+        $question->delete();
+        return redirect('/questionbank')->with('success', 'Post Deleted');
     }
 }

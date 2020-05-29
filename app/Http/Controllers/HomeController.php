@@ -28,14 +28,16 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
+
         $userPosts = $user->posts;
+        $userQuestions = $user->questions;
         $SortPosts = $userPosts->sortByDesc('id');
 
         //all posts
         $posts = Post::all();
 
         $data = array(
-            'posts' => $posts->sortByDesc('id'),
+            'userQuestions' => $userQuestions->sortByDesc('id'),
             'userPosts' => $userPosts->sortByDesc('id')
         );
 
