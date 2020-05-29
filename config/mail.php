@@ -36,7 +36,7 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'nuwanwijesurendradrive001@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'postmaster@sandboxcf3e5a93c61a4d4fac92d1851df46d37.mailgun.org'),
         'name' => env('MAIL_FROM_NAME', 'SLTUTOR'),
     ],
 
