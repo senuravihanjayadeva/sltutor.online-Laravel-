@@ -12,11 +12,11 @@
                     
                     @if(Auth::user()->ProfileImage)
 
-                    <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/{{ Auth::user()->ProfileImage }}" width="200px" height="200px">
+                    <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/{{ Auth::user()->ProfileImage }}" width="150px" height="150px">
 
                     @else
 
-                    <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/noimage.jpg" width="200px" height="200px">
+                    <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/noimage.jpg" width="150px" height="150px">
 
                     @endif
                 
@@ -113,7 +113,7 @@
                     Radio Button
                     **************************************************************************-->
                 
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6 text-center">
                     <div class="form-group">
                         
                         {{ Form::radio('option', 'Question', true,['onclick' => 'checkfunc(0)']) }}
@@ -123,7 +123,7 @@
                     
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6 text-center">
                     <div class="form-group">
                         
                         {{ Form::radio('option', 'Advertisements',false,['onclick' => 'checkfunc(1)']) }}
