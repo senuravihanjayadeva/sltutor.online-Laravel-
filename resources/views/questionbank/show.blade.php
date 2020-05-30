@@ -16,7 +16,7 @@
 
                   @include('inc.messages')
 
-            @foreach($data['question'] as $post)
+      
 
             <div class="card">
                 <div class="card-body">
@@ -60,7 +60,8 @@
                     
             </div>
 
-            @endforeach
+            
+
 
         </div>
 
@@ -124,6 +125,10 @@
                 <hr>
                 <p>Answers</p>
                 <div class="row">
+
+                    @comments(['model' => $post])
+                  
+
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">

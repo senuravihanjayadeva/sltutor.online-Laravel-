@@ -82,18 +82,14 @@ class QuestionBankController extends Controller
      */
     public function show($id)
     {
-        $question = DB::select("select * from question_banks where id = '$id' ");
+        // $question = DB::select("select * from question_banks where id = '$id' ");
 
-        $questions = QuestionBank::all()->take(4); //limit 4 posts 
-
-        $data = array(
-
-            'posts' => $questions->sortByDesc('id'),
-            'question' => $question,
-        );
+        // return view('questionbank.show')->with('post', $question);
 
 
-        return view('questionbank.show', compact('data'));
+        $post = QuestionBank::find($id);
+
+        return view('questionbank.show')->with('post', $post);
     }
 
     /**
