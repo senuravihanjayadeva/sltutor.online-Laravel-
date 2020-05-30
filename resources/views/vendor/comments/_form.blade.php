@@ -39,8 +39,17 @@
             @endif
 
             <div class="form-group">
-                <label for="message">Enter your message here:</label>
-                <textarea class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="3"></textarea>
+                <label for="message">Enter your answer here:</label>
+                <textarea id="summary-ckeditor2" class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="3"></textarea>
+                
+                <script src="{{ asset('../ckeditor/ckeditor.js') }}"></script>
+                <script>
+                    CKEDITOR.replace( 'summary-ckeditor2', {
+                        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                        filebrowserUploadMethod: 'form'
+                    });
+                </script>
+                
                 <div class="invalid-feedback">
                     Your message is required.
                 </div>

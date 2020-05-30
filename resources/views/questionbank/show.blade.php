@@ -74,20 +74,18 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="border: white">
                 <div class="card-body">
-                    <h6>Your Answer</h6>
+
+                    <hr> 
+
+                    <h6>Answers</h6>
+
+
+                    @comments(['model' => $post])
 
                     {!! Form::open(['action' => 'QuestionBankController@store', 'method' => 'POST','enctype' => 'multipart/form-data']) !!}
-
-
-                        <div class="form-group">
-                
-                            <strong> 
-                                {{ Form::label('body','Body') }}
-                            </strong>
-                            {{ Form::textarea('body','',['id'=>'summary-ckeditor','class' => 'form-control']) }}
-                
+         
                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                             <script>
                                 CKEDITOR.replace( 'summary-ckeditor', {
@@ -97,53 +95,13 @@
                             </script>
                             
                         
-                        </div>
-                      
-                        <div class="form-row">
-
-                            <div class="col-md-12 content-right">
-                                
-                                {{Form::submit('ADD YOUR ANSWER',['class' => 'btn btn-primary form-btn'] )}}
-                
-                                <button class="btn btn-danger form-btn" type="reset">CANCEL </button>
-                            
-                            </div>
-                
-                        </div>
-
-                    {!! Form::close() !!}
-
+            
                 </div>
             </div>
         </div>
         <div class="col-md-2"></div>
     </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <section>
-                <hr>
-                <p>Answers</p>
-                <div class="row">
 
-                    @comments(['model' => $post])
-                  
-
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Edit</a><a class="card-link"
-                                    href="#">Delete</a>
-                                <p>Answered&nbsp;8 hours ago by Senura Vihan<br></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="col"></div>
-        <div class="col-md-2"></div>
-    </div>
 </section>
 
 @endsection

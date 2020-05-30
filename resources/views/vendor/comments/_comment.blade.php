@@ -9,7 +9,7 @@
     <img class="mr-3" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
     <div class="media-body">
         <h5 class="mt-0 mb-1">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5>
-        <div style="white-space: pre-wrap;">{!! $markdown->line($comment->comment) !!}</div>
+        <div style="white-space: pre-wrap;">{!! $comment->comment !!}</div>
 
         <div>
             @can('reply-to-comment', $comment)
@@ -42,8 +42,19 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="message">Update your message here:</label>
-                                    <textarea required class="form-control" name="message" rows="3">{{ $comment->comment }}</textarea>
+                                    <label for="message">Update your answer here:</label>
+                                    <textarea id="summary-ckeditor-update" required  class="form-control" name="message" rows="3">{{ $comment->comment }}</textarea>
+
+                                    
+                                    <script src="{{ asset('../ckeditor/ckeditor.js') }}"></script>
+                                    <script>
+                                        CKEDITOR.replace( 'summary-ckeditor-update', {
+                                            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                                            filebrowserUploadMethod: 'form'
+                                        });
+                                    </script>
+
+
                                     <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
@@ -71,8 +82,18 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="message">Enter your message here:</label>
-                                    <textarea required class="form-control" name="message" rows="3"></textarea>
+                                    <label for="message">Enter your answer here:</label>
+                                    <textarea id="summary-ckeditor" required class="form-control" name="message" rows="3"></textarea>
+
+                                    <script src="{{ asset('../ckeditor/ckeditor.js') }}"></script>
+                                    <script>
+                                        CKEDITOR.replace( 'summary-ckeditor', {
+                                            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                                            filebrowserUploadMethod: 'form'
+                                        });
+                                    </script>
+
+
                                     <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
