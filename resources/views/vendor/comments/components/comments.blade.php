@@ -12,7 +12,7 @@
 
 <ul class="list-unstyled">
     @php
-        $comments = $comments->sortBy('created_at');
+        $comments = $comments->sortByDesc('created_at');
 
         if (isset($perPage)) {
             $page = request()->query('page', 1) - 1;

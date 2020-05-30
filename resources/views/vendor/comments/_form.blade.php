@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <label for="message">Enter your answer here:</label>
-                <textarea id="summary-ckeditor2" class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="3"></textarea>
+                <textarea id="summary-ckeditor2" class="form-control @if($errors->has('message')) is-invalid @endif" name="message" ></textarea>
                 
                 <script src="{{ asset('../ckeditor/ckeditor.js') }}"></script>
                 <script>
