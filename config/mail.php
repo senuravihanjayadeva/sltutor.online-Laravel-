@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'postmaster@sandboxcf3e5a93c61a4d4fac92d1851df46d37.mailgun.org'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hexagon@sltutor.online'),
         'name' => env('MAIL_FROM_NAME', 'SLTUTOR'),
     ],
 
