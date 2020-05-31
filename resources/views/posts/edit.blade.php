@@ -154,72 +154,69 @@
             @endif
 
             <div class="form-group">
-                
-                           
-            @if($post->level == 'Advanced Level' ) 
-                <div class="col-md-6" id="olsubblock" style="display: none" >
-            @else
-                <div class="col-md-6" id="olsubblock" style="display: block" >
-            @endif
 
                 <strong> 
                     {{ Form::label('subject','Subject') }}
-                </strong>   
+                </strong>  
+            
+            
+            <div class="col-md-12" id="olsubblock">
 
-                {{ Form::select('subject', [
+            {{ Form::select('subject', [
 
-                    'Maths' => 'Maths', 
-                    'Science' => 'Science', 
-                    'History' => 'History', 
-                    'Sinhala' => 'Sinhala', 
-                    'English' => 'English', 
-                    'Buddhism' => 'Buddhism', 
-                    'Information & Communication Technology' => 'Information & Communication Technology', 
-                    'Geography' => 'Geography',
-                    'Music' => 'Music', 
-                    'Art' => 'Art', 
-                    'Dancing' => 'Dancing', 
-                    'Health & Physical Education' => 'Health & Physical Education',
-                    
-                    ], $post->subject ,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                'Maths' => 'Maths', 
+                'Science' => 'Science', 
+                'History' => 'History', 
+                'Sinhala' => 'Sinhala', 
+                'English' => 'English', 
+                'Buddhism' => 'Buddhism', 
+                'Information & Communication Technology' => 'Information & Communication Technology', 
+                'Geography' => 'Geography',
+                'Music' => 'Music', 
+                'Art' => 'Art', 
+                'Dancing' => 'Dancing', 
+                'Health & Physical Education' => 'Health & Physical Education',
                 
-                </div>
+                ], $post->subject ,['id' => 'olsub','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+              
+            </div>
 
-            @if($post->level == 'Advanced Level' ) 
-                <div class="col-md-6" id="alsubblock" style="display: block" >
-            @else
-                <div class="col-md-6" id="alsubblock" style="display: none" >
-            @endif
+             
+            
+            <div class="col-md-12" id="alsubblock" style="display:none;">
+
+            {{ Form::select('subject', [
+
+
+                  
+                'Combined Maths' => 'Combined Maths', 
+                'Biology' => 'Biology', 
+                'Physics' => 'Physics', 
+                'Chemistry' => 'Chemistry',
+                'Agriculture' => 'Agriculture', 
+                'A/L ICT' => 'A/L ICT', 
+                'Business Studies' => 'Business Studies', 
+                'Economics' => 'Economics', 
+                'Accounting' => 'Accounting',
+                'A/L Sinhala' => 'A/L Sinhala', 
+                'Political Science' => 'Political Science',
+                'Buddist Civilization' => 'Buddist Civilization', 
+                'A/L Geography' => 'A/L Geography', 
+                'Engineering Technology' => 'Engineering Technology',
+                'Bio Systems Technology' => 'Bio Systems Technology', 
+                'Science for Technology' => 'Science for Technology', 
+                'General English' => 'General English',
+                'Logic' => 'Logic',
                 
+              
 
-                    <strong> 
-                        {{ Form::label('subject','Subject') }}
-                    </strong>   
+                ], $post->subject,['id' => 'alsub','disabled'=>'true','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
 
-                    {{ Form::select('subject', [
+            </div>
 
-                        'Combined Maths' => 'Combined Maths', 
-                        'Biology' => 'Biology', 
-                        'Physics' => 'Physics', 
-                        'Chemistry' => 'Chemistry',
-                        'Agriculture' => 'Agriculture', 
-                        'A/L ICT' => 'A/L ICT', 
-                        'Business Studies' => 'Business Studies', 
-                        'Economics' => 'Economics', 
-                        'Accounting' => 'Accounting', 
-                        'A/L Sinhala' => 'A/L Sinhala', 
-                        'Political Science' => 'Political Science',
-                        'Buddist Civilization' => 'Buddist Civilization', 
-                        'A/L Geography' => 'A/L Geography', 
-                        'Engineering Technology' => 'Engineering Technology',
-                        'Bio Systems Technology' => 'Bio Systems Technology', 
-                        'Science for Technology' => 'Science for Technology', 
-                        'General English' => 'General English',
-                        'Logic' => 'Logic',
-                        
-                        ], $post->subject,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
-                    
-                    </div>
+           
+
+       
             
             </div>
 
@@ -285,7 +282,9 @@
                 </strong>                 
                 
                 
-                {{ Form::select('district', [
+                {{ Form::select('district', 
+                    
+                [
 
                 'Ampara' => 'Ampara', 
                 'Anuradhapura' => 'Anuradhapura', 
@@ -404,12 +403,14 @@
         {
             document.getElementById("alsubblock").style.display = 'block';
             document.getElementById("olsubblock").style.display = 'none';
-            document.getElementById("olsub").disabled= TRUE;
+            document.getElementById("alsub").disabled= false;
+            
         }
         if (x == 1)
         {
             document.getElementById("alsubblock").style.display = 'none';
             document.getElementById("olsubblock").style.display = 'block';
+       
       
         }
     }

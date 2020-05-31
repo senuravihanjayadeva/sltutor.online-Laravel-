@@ -202,4 +202,23 @@ class QuestionBankController extends Controller
         $question->delete();
         return redirect('/questionbank')->with('success', 'Post Deleted');
     }
+
+
+    public function search()
+    {
+        $comments = DB::select("select commentable_id,count(*) as count  from comments group by commentable_id");
+
+        $questions =  DB::table('question_banks')->where('subject', 'Biology');
+
+
+
+        $data = array(
+
+            'questions' => $questions,
+            'comments' => $comments,
+        );
+
+
+        return view('questionbank.index', compact('data'));
+    }
 }

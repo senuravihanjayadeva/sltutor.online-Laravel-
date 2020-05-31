@@ -106,7 +106,7 @@
                 'Dancing' => 'Dancing', 
                 'Health & Physical Education' => 'Health & Physical Education',
                 
-                ], $question->subject,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                ], $question->subject,['id' => 'olsub','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
             
             </div>
 
@@ -145,7 +145,7 @@
                     'General English' => 'General English',
                     'Logic' => 'Logic',
                     
-                    ], $question->subject,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                    ], $question->subject,['id' => 'alsub','disabled'=>'true','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
                 
                 </div>
         
@@ -201,7 +201,7 @@
         {
             document.getElementById("alsubblock").style.display = 'block';
             document.getElementById("olsubblock").style.display = 'none';
-            document.getElementById("olsub").disabled= TRUE;
+            document.getElementById("alsub").disabled= false;
         }
         if (x == 1)
         {

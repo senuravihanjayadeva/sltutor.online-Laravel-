@@ -86,7 +86,7 @@
 
                                             <div class="col-md-6" style="padding: 10px">
                                                 
-                                                <a href="/questionbank/create" class="btn btn-success">Ask Your Subject Question</a>
+                                                <a href="/questionbank/create" class="btn btn-success">Ask Questions</a>
 
                                             </div>
 
@@ -118,7 +118,7 @@
                         
                         {{ Form::radio('option', 'Question', true,['onclick' => 'checkfunc(0)']) }}
                         <strong> 
-                            {{ Form::label('option','Question you Asked') }}
+                            {{ Form::label('option','Questions you have Asked') }}
                         </strong>
                     
                     </div>
@@ -128,7 +128,7 @@
                         
                         {{ Form::radio('option', 'Advertisements',false,['onclick' => 'checkfunc(1)']) }}
                         <strong> 
-                            {{ Form::label('option','Advertisements You Posted') }}
+                            {{ Form::label('option','Advertisements have You Posted') }}
                         </strong>
                     
                     </div>

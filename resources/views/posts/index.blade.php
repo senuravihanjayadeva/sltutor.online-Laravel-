@@ -115,8 +115,20 @@
                                 </a>
                                 @endforeach  
 
-                                @else
-                                    <h4>No Posts</h4>
+                                @else 
+                                <!--if there are no posts-->
+                                
+                                   <div class="row">
+                                    
+                                        <div class="col-md-12">
+                                        <center>
+                                        <h4 style="color: black" class="text-center">No posts Yet</h4>
+                                        <img width="300px" src="/storage/assets/img/wait.png">
+                                        </center>
+                                        </div>
+                                    
+                                   </div>
+                                
                                 @endif
 
                                 <!--************************************************************************

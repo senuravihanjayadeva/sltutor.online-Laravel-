@@ -29,9 +29,14 @@ Route::resource('editor', 'CKEditorController');
 
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
+
+Route::get('/searchQuestions', 'QuestionBankController@search');
+
 // Route::get('/users/{id}', function ($id) {
 //     return 'This is user ' . $id;
 // });
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

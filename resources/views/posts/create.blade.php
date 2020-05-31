@@ -149,7 +149,7 @@
                         'Dancing' => 'Dancing', 
                         'Health & Physical Education' => 'Health & Physical Education',
                         
-                        ], null,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                        ], null,['id' =>'olsub','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
                     
                     </div>
 
@@ -180,7 +180,7 @@
                             'General English' => 'General English',
                             'Logic' => 'Logic',
                             
-                            ], null,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                            ], null,['id' => 'alsub','disabled'=>'true','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
                         
                         </div>
                 
@@ -363,7 +363,7 @@ function checkfunc(x)
     {
         document.getElementById("alsubblock").style.display = 'block';
         document.getElementById("olsubblock").style.display = 'none';
-        document.getElementById("olsub").disabled= TRUE;
+        document.getElementById("alsub").disabled= false;
     }
     if (x == 1)
     {

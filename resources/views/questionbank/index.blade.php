@@ -6,21 +6,29 @@
 <div class="row">
     <div
       class="col-md-2 d-xl-flex align-items-xl-start"
-      style="margin: 25px 15px 0px ;"
-    >
+      style="margin: 25px 15px 0px ;">
       <section>
         <div class="row">
-          <div class="col-md-12 text-center" style="margin: 5px;">
-            <form>
-              <label>Sorted by subject</label
-              ><select class="form-control"
-                ><optgroup label="This is a group"
-                  ><option value="12" selected="">This is item 1</option
-                  ><option value="13">This is item 2</option
-                  ><option value="14">This is item 3</option></optgroup
-                ></select
-              >
+          <div class="col-md-12 text-center" style="margin: 15px;">
+
+            <form action="/searchQuestions" method="get">
+
+              <label>Sorted by subject</label>
+              
+              <select class="form-control">
+                <optgroup label="This is a group">
+
+                  <option value="Maths" selected="">Maths</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Chemistry">Chemistry</option>
+                
+                </optgroup>
+
+                
+              </select>
             </form>
+
+
           </div>
         </div>
       </section>
@@ -65,7 +73,7 @@
         <!--****************************** Question Bank Grid****************************-->
 
         
- 
+        @if(count($data['questions']) > 0)
            
         @foreach($data['questions'] as $question)
 
@@ -97,6 +105,8 @@
                       
 
                       @endforeach
+
+         
 
           
                       
@@ -151,6 +161,19 @@
             </div>
 
             @endforeach
+
+            <!--If there are no questions-->
+            @else 
+
+            <div>
+                      <center>
+                      <hr>
+                      <h4 style="color: black">No Questions Yet</h4>
+                      <img width="300px" src="/storage/assets/img/wait.png">
+                      </center>
+            </div>
+
+         @endif
          
 
             <!--******************************End of Question Bank Grid****************************-->
