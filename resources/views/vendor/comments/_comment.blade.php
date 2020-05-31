@@ -7,10 +7,19 @@
   <li id="comment-{{ $comment->getKey() }}" class="media">
 @endif
 
-    @if($comment->commenter->ProfileImage == null)
-        <img style="border-radius: 50%" width="30" class="mr-3" src="/storage/ProfileImage/noimage.jpg" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
+    <!--If the user is exist-->
+    @if(($comment->commenter))
+
+        @if($comment->commenter->ProfileImage == null)
+            <img style="border-radius: 50%" width="30" class="mr-3" src="/storage/ProfileImage/noimage.jpg" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
+        @else
+            <img style="border-radius: 50%" width="30" class="mr-3" src="/storage/ProfileImage/{{  $comment->commenter->ProfileImage }}" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
+        @endif
+
     @else
-        <img style="border-radius: 50%" width="30" class="mr-3" src="/storage/ProfileImage/{{  $comment->commenter->ProfileImage }}" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
+    <!--If the user is doesnt exist-->
+    <img style="border-radius: 50%" width="30" class="mr-3" src="/storage/ProfileImage/noimage.jpg" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
+
     @endif
   
     <div class="media-body">
@@ -18,7 +27,6 @@
         <h5 class="mt-0 mb-1">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5>
         <div style="white-space: pre-wrap;">{!! $comment->comment !!}</div>
         
-
         <div>
             @can('reply-to-comment', $comment)
                 <button data-toggle="modal" data-target="#reply-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Reply</button>

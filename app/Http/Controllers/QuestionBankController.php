@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\QuestionBank;
+use App\Post;
 use DB;
 
 class QuestionBankController extends Controller
@@ -26,10 +27,41 @@ class QuestionBankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexTest()
+    {
+
+        $comments = DB::select("select commentable_id,count(*) as count from comments group by commentable_id");
+
+        $questions =  QuestionBank::orderBy('id', 'desc')->paginate(50); //add pagination
+
+        $data = array(
+
+            'comments' =>  $comments,
+            '$questions' => $questions,
+        );
+
+
+        return view('questionbank.index', compact('data'));
+
+        //return view('questionbank.index')->with('questions', $questions);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+
     public function index()
     {
-        $questions =  QuestionBank::orderBy('id', 'desc')->paginate(50); //add pagination
-        return view('questionbank.index')->with('questions', $questions);
+        $comments = DB::select("select commentable_id,count(*) as count  from comments group by commentable_id");
+
+        $questions = QuestionBank::all();
+
+        $data = array(
+
+            'questions' => $questions->sortByDesc('id'),
+            'comments' => $comments,
+        );
+
+
+        return view('questionbank.index', compact('data'));
     }
 
     /**
