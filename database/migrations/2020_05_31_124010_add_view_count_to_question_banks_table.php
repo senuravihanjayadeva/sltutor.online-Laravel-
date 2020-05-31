@@ -13,8 +13,9 @@ class AddViewCountToQuestionBanksTable extends Migration
      */
     public function up()
     {
-        Schema::table('question_banks', function (Blueprint $table) {
-            //
+        Schema::table('question_banks', function ($table) {
+
+            $table->string('viewCount');
         });
     }
 
@@ -25,8 +26,9 @@ class AddViewCountToQuestionBanksTable extends Migration
      */
     public function down()
     {
-        Schema::table('question_banks', function (Blueprint $table) {
-            //
+        Schema::table('question_banks', function ($table) {
+
+            $table->dropColumn('viewCount');
         });
     }
 }

@@ -102,7 +102,7 @@
                       <p style="font-size: 12px;">answers</p>
                     </div>
                     <div class="col text-center">
-                      <h1 style="font-size: 15px;">10</h1>
+                      <h1 style="font-size: 15px;">{{$question->viewCount}}</h1>
                       <p style="font-size: 12px;">views</p>
                     </div>
                   </div>

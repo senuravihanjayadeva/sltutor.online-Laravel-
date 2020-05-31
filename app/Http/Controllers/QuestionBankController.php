@@ -118,6 +118,10 @@ class QuestionBankController extends Controller
 
         // return view('questionbank.show')->with('post', $question);
 
+        $count = QuestionBank::find($id);
+        $count->viewCount = $count->viewCount + 1;
+        $count->save();
+
 
         $post = QuestionBank::find($id);
 
