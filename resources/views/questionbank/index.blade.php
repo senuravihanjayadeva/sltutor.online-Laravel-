@@ -91,7 +91,8 @@
                  
                             <h1 style="font-size: 15px;">{{$comments->count}}</h1>
 
-                      @endif
+                       
+                       @endif
 
                       
 

@@ -157,11 +157,23 @@
                         <div class="row d-xl-flex align-items-center align-content-center align-self-center justify-content-xl-center align-items-xl-center" style="padding: 5px;">
       
                           <div class="col text-center">
-                            <h1 style="font-size: 15px;">20</h1>
+
+                            @foreach($data['comments'] as $comments)
+
+                      
+                            @if( $comments->commentable_id ==  $userquestions->id)
+                     
+                                <h1 style="font-size: 15px;">{{$comments->count}}</h1>
+    
+                          @endif
+    
+
+                          @endforeach
+
                             <p style="font-size: 12px;">answers</p>
                           </div>
                           <div class="col text-center">
-                            <h1 style="font-size: 15px;">10</h1>
+                            <h1 style="font-size: 15px;">{{$userquestions->viewCount}}</h1>
                             <p style="font-size: 12px;">views</p>
                           </div>
                         </div>

@@ -33,12 +33,15 @@ class HomeController extends Controller
         $userQuestions = $user->questions;
         $SortPosts = $userPosts->sortByDesc('id');
 
+        $comments = DB::select("select commentable_id,count(*) as count  from comments group by commentable_id");
+
         //all posts
         $posts = Post::all();
 
         $data = array(
             'userQuestions' => $userQuestions->sortByDesc('id'),
-            'userPosts' => $userPosts->sortByDesc('id')
+            'userPosts' => $userPosts->sortByDesc('id'),
+            'comments' => $comments,
         );
 
         return view('home', compact('data'));
