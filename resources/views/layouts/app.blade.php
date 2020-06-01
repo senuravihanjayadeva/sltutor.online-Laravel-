@@ -50,6 +50,8 @@
         <link rel="stylesheet" href="/storage/assets/css/Profile-Edit-Form-1.css">
         <link rel="stylesheet" href="/storage/assets/css/Profile-Edit-Form.css">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
         <title>{{config('app.name','SLTUTOR')}}</title>
  
     </head>

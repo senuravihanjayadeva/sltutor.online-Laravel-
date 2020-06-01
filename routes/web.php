@@ -40,3 +40,5 @@ Route::get('/searchQuestions', 'QuestionBankController@search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/search', 'LiveSearch@action');
