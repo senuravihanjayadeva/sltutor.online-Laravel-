@@ -7,7 +7,7 @@
 @endphp
 
 @if($comments->count() < 1)
-    <div class="alert alert-warning">There are no comments yet.</div>
+    <div class="alert alert-warning">No answers yet.</div>
 @endif
 
 <ul class="list-unstyled">

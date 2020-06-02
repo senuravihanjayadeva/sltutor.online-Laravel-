@@ -51,7 +51,7 @@
                 
             </div>
             <div class="col-md-8">
-                <h1>Create Your Post</h1>
+                <h1>Create Your Advertisement</h1>
                 <hr>
                 <div class="form-row">
                     <div class="col-sm-12 col-md-6">
@@ -294,24 +294,55 @@
             </div>
         </div>
 
+        <div class="form-row">
+            <div class="col-sm-12 col-md-6">
+
+            <div class="form-group">
+            
+   
+
+            {{ Form::checkbox('medium[]', 'Sinhala Medium') }}
+            <strong> 
+                {{ Form::label('medium','Sinhala Medium') }}
+            </strong> <br>
+
+            {{ Form::checkbox('medium[]', 'English Medium') }}
+            <strong> 
+                {{ Form::label('medium','English Medium') }}
+            </strong> <br>
+
+            {{ Form::checkbox('medium[]', 'Tamil Medium') }}
+            <strong> 
+                {{ Form::label('medium','Tamil Medium') }}
+            </strong> <br>
+                
+            </div>
+
+         </div>
+
+         <div class="col-sm-12 col-md-6">
+
         <div class="form-group">
             
-            <strong> 
-                {{ Form::label('medium','Medium') }}
-            </strong> 
 
-            {{ Form::text('medium','',['class' => 'form-control','placeholder' => 'Sinhala Medium , English Medium , Tamil Medium']) }} 
-                
+            {{ Form::checkbox('tutiontype[]', 'Individual') }}
+            <strong> 
+                {{ Form::label('tutiontype','Individual') }}
+            </strong> <br>
+
+            {{ Form::checkbox('tutiontype[]', 'Group') }}
+            <strong> 
+                {{ Form::label('tutiontype','Group') }}
+            </strong> <br>
+
+            {{ Form::checkbox('tutiontype[]', 'Other') }}
+            <strong> 
+                {{ Form::label('tutiontype','Other') }}
+            </strong> <br>
+
         </div>
 
-        <div class="form-group">
-            
-            <strong> 
-                {{ Form::label('tutiontype','Tuition Type') }}
-            </strong> 
-
-            {{ Form::text('tutiontype','',['class' => 'form-control','placeholder' => 'Individual , Group, Other']) }} 
-                
+        </div>
         </div>
 
         <div class="form-group">
@@ -369,7 +400,7 @@ function checkfunc(x)
     {
         document.getElementById("alsubblock").style.display = 'none';
         document.getElementById("olsubblock").style.display = 'block';
-  
+        document.getElementById("alsub").disabled= true;
     }
 }
 

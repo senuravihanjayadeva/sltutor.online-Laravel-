@@ -93,6 +93,9 @@ class PostsController extends Controller
             $fileNameToStore = 'noimage.jpg';
         }
 
+        $MediumString = implode(",", $request->get('medium'));
+        $tutiontypeString = implode(",", $request->get('tutiontype'));
+
         //Create Post
         $post = new Post;
         $post->fullName = $request->input('fullName');
@@ -108,8 +111,8 @@ class PostsController extends Controller
         $post->town = $request->input('town');
         $post->email = $request->input('email');
         $post->mobile = $request->input('mobile');
-        $post->medium = $request->input('medium');
-        $post->tutiontype = $request->input('tutiontype');
+        $post->medium = $MediumString;
+        $post->tutiontype =  $tutiontypeString;
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
         $post->save();

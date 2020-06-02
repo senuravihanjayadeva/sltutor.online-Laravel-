@@ -36,9 +36,9 @@
                 <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->created_at}}<br></p>
                     <h4 class="card-title" style="color: rgb(39,39,39);padding: 0px;">{{$post->subject}}</h4>
                     <h4 class="card-title" style="color: rgb(39,39,39);padding: 0px;">{{$post->fullName}}<br></h4>
-                    <h6 class="text-muted card-subtitle mb-2" style="font-family: ABeeZee, sans-serif;">Sinhala Medium,English Medium<br></h6>
-                    <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">Private(Individual) Class,Group Class<br></p>
-                    <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">District -&gt;&nbsp;{{$post->district}}<br></p>
+                    <h6 class="text-muted card-subtitle mb-2" style="font-family: ABeeZee, sans-serif;">{{$post->medium}}<br></h6>
+                    <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->tutiontype}}<br></p>
+                    <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->district}} -&gt;&nbsp;{{$post->town}}<br></p>
                 <p class="card-text" style="font-family: Aclonica, sans-serif;color: rgb(49,50,50);font-size: 20px;margin: 5px 0px;">Rs.{{$post->price}}<br></p>
                 <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;"><br>{!! $post->description !!}<br><br></p>
 

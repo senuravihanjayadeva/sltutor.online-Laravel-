@@ -9,13 +9,17 @@
 
       <section>
         <div class="row">
+
+          <!--********************************
+                      Coloum one
+          *************************************-->
           <div class="col-md-12 text-center" style="margin: 15px;">
 
             <form action="/search" method="POST" role="search">
               {{ csrf_field() }}
               <div class="input-group">
 
-              <input type="text" class="form-control" name="search"
+              <input type="text" style = "width:100%" class="form-control" name="search"
                 placeholder="Search By Title"> <span class="input-group-btn">
 
              <button type="submit" class="btn btn-default">
@@ -27,6 +31,24 @@
 
 
           </div>
+
+          <!--********************************
+                      Coloum two
+          *************************************-->
+
+          <div class="col-md-12 text-center" style="margin: 15px;">
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">QUESTION BANK</h5>
+                <p class="card-text">Main objective of SLTUTOR is to discuss your subject(A-Level, O-Level, Other ) related issues & find solutions to them</p>
+              
+              </div>
+            </div>
+
+
+          </div>
+
         </div>
       </section>
 
@@ -179,23 +201,17 @@
 
                       @foreach($data['comments'] as $comments)
 
-                      
                         @if( $comments->commentable_id ==  $question->id)
-                 
-                            <h1 style="font-size: 15px;">{{$comments->count}}</h1>
-
                        
-                       @endif
-
-                      
+                        <h1 id="commentCount" style="font-size: 15px;">{{$comments->count}}</h1> 
+                        
+                        @endif
 
                       @endforeach
 
-         
-
-          
-                      
                       <p style="font-size: 12px;">answers</p>
+                 
+                      
                     </div>
                     <div class="col text-center">
                       <h1 style="font-size: 15px;">{{$question->viewCount}}</h1>
@@ -277,3 +293,5 @@
 </div>
 
 @endsection
+
+

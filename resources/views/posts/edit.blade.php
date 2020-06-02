@@ -410,7 +410,7 @@
         {
             document.getElementById("alsubblock").style.display = 'none';
             document.getElementById("olsubblock").style.display = 'block';
-       
+            document.getElementById("alsub").disabled= true;
       
         }
     }

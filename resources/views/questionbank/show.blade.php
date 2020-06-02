@@ -19,9 +19,9 @@
       
 
             <div class="card">
-                <div class="card-body">
+                <div id="questionPost" class="card-body">
                     <h4 class="card-title" style="color: rgb(76,73,73);margin: 0px ;padding: 0px;">{{$post->title}}</h4>
-                    <p style="font-size: 12px;">Asked&nbsp; {{$post->created_at}} by {{$post->name}}  </p>
+                    <p style="font-size: 12px;">Asked on &nbsp; {{$post->created_at}} by {{$post->name}}  </p>
                     <hr>
                     <p class="card-text">
                         {!!$post->body!!}

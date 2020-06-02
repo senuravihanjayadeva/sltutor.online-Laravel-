@@ -57,6 +57,7 @@
     </head>
     <body>
       
+        <div id="page-container">
 
         <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
             <div class="container"><a class="navbar-brand" href="/">SLTUTOR</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -74,7 +75,7 @@
 
                         @endguest
                         <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Find Teachers</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Create Your Ad </a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Promote ur Tuition </a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="/questionbank">Question Bank</a></li>
                         <!--
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#">PastPapers</a></li>
@@ -118,7 +119,7 @@
                     **-->
 
 
-        <div class="footer-dark">
+        <div id="footer" class="footer-dark" >
             <footer>
                 <div class="container">
                     <div class="row">
@@ -162,5 +163,7 @@
             CKEDITOR.replace( 'article-ckeditor' );
         </script>
 
+
+        </div>
     </body>
 </html>
