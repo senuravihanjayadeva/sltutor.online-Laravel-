@@ -89,7 +89,7 @@
                     <a class="btn btn-light action-button" role="button" href="{{ route('register') }}">Sign Up</a>
                     @endif
                     @else
-                    <a class="login" href="/home"> ADMIN</a>
+                    <a class="login" href="/home"> {{ Auth::guard('admin')->user()->name }}  </a>
                     <a class="btn btn-light action-button" role="button" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
 
