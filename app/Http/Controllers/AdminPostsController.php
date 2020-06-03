@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth; //FOR Auth Class
 use App\Post;
 
 class AdminPostsController extends Controller
@@ -58,6 +59,12 @@ class AdminPostsController extends Controller
      */
     public function edit($id)
     {
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
+
         $post = Post::find($id);
 
         return view('adminPost.edit')->with('post', $post);
@@ -148,6 +155,11 @@ class AdminPostsController extends Controller
      */
     public function destroy($id)
     {
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
         $post = Post::find($id);
 
         if ($post->cover_image != 'noimage.jpg') {

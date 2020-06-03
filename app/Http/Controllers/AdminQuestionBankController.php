@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth; //FOR Auth Class
 use App\QuestionBank;
 use App\Post;
 use DB;
@@ -62,6 +63,12 @@ class AdminQuestionBankController extends Controller
      */
     public function edit($id)
     {
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
+
         $question = QuestionBank::find($id);
 
         return view('adminQuestionBank.edit')->with('question', $question);
@@ -108,6 +115,12 @@ class AdminQuestionBankController extends Controller
      */
     public function destroy($id)
     {
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
+
         $question = QuestionBank::find($id);
 
         $question->delete();

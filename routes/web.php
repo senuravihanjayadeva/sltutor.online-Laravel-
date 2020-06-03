@@ -61,3 +61,5 @@ Route::resource('adminUser', 'AdminUserController');
 Route::resource('adminPost', 'AdminPostsController');
 
 Route::resource('adminQuestionBank', 'AdminQuestionBankController');
+
+Route::resource('pastpapers', 'PastPapersController');

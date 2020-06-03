@@ -174,7 +174,7 @@
                                             {!!Form::open(['action' => ['AdminQuestionBankController@destroy',$question->id], 'method' => 'POST' ]) !!}
 
                                             {{Form::hidden('_method', 'DELETE')}}
-                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm', 'style' => 'margin:5px 0px;'])}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm'])}}
                                         
                                             {!!Form::close() !!}
                                         </td>
@@ -190,33 +190,46 @@
 
                         <!-- Past papers table-->
                         <div id="tablePastpapers" class="table-responsive" style="display: none">
+                           <a class="nav-link" href="/pastpapers/create"><button class="btn btn-success btn-sm"> Create a PastPaper</button></a>
                             <h3>Past papers</h3>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
+                                        <th>Year</th>
+                                        <th>Grade</th>
+                                        <th>Subject</th>
+                                        <th>Term</th>
+                                        <th>School</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($data['pastpapers']  as $pastpaper)
                                     <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
+                                        <td>{{$pastpaper->id}}</td>
+                                        <td>{{$pastpaper->year}}</td>
+                                        <td>{{$pastpaper->grade}}</td>
+                                        <td>{{$pastpaper->subject}}</td>
+                                        <td>{{$pastpaper->term}}</td>
+                                        <td>{{$pastpaper->school}}</td>
+                                        <td>
+                                            <a class="card-link" href="/pastpapers/{{$pastpaper->id}}/edit">
+                                                <button class="btn btn-info btn-sm">Edit</button>
+                                            </a>
+                                        </td>
+                                        <td>     
+                                            {!!Form::open(['action' => ['PastPapersController@destroy',$pastpaper->id], 'method' => 'POST' ]) !!}
+
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm'])}}
+                                        
+                                            {!!Form::close() !!}
+                                        </td>
                                        
                                     </tr>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -8,12 +8,24 @@ use App\User;
 use App\Post;
 use App\QuestionBank;
 use App\Admin;
+use App\PastPaper;
 use DB;
 
 
 
 class AdminController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //$this->middleware('admins');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -24,11 +36,13 @@ class AdminController extends Controller
         $users = User::all();
         $advertisements = Post::all();
         $questionBanks = QuestionBank::all();
+        $pastpapers = PastPaper::all();
 
         $data = array(
             'users' => $users->sortByDesc('id'),
             'advertisements' => $advertisements->sortByDesc('id'),
             'questionBanks' => $questionBanks->sortByDesc('id'),
+            'pastpapers' => $pastpapers->sortByDesc('id'),
         );
 
         return view('admin', compact('data'));

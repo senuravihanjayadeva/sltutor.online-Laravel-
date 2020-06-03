@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth; //FOR Auth Class
 use Illuminate\Support\Facades\Storage; //connect with storage
 
 class AdminUserController extends Controller
@@ -81,6 +82,13 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
+
+
         $user = User::find($id);
 
         if ($user->ProfileImage != null) {
