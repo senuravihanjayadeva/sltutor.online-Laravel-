@@ -62,7 +62,9 @@ class AdminQuestionBankController extends Controller
      */
     public function edit($id)
     {
-        //
+        $question = QuestionBank::find($id);
+
+        return view('adminQuestionBank.edit')->with('question', $question);
     }
 
     /**
@@ -74,7 +76,28 @@ class AdminQuestionBankController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+
+            'title' => 'required',
+            'level' => 'required',
+            'subject' => 'required',
+            'body' => 'required',
+
+
+        ]);
+
+        //update question
+        $question =  QuestionBank::find($id);
+        $question->title = $request->input('title');
+        $question->level = $request->input('level');
+        $question->subject = $request->input('subject');
+        $question->body = $request->input('body');
+        $question->user_id = $request->input('user_id');
+        $question->name = $request->input('name');
+        $question->ProfileImage =  $request->input('ProfileImage');;
+        $question->save();
+
+        return redirect('admin')->with('success', 'Question Updated');
     }
 
     /**

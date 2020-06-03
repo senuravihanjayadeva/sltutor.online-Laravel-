@@ -74,7 +74,6 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
@@ -85,7 +84,7 @@
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <td>Edit</td>
+                                
                                         <td>    
                                             {!!Form::open(['action' => ['AdminUserController@destroy',$user->id], 'method' => 'POST' ]) !!}
 
@@ -122,12 +121,16 @@
                                         <td>{{$advertisement->id}}</td>
                                         <td>{{$advertisement->fullName}}</td>
                                         <td>{{$advertisement->subject}}</td>
-                                        <td>Edit</td>
+                                        <td>          
+                                            <a href="/adminPost/{{$advertisement->id}}/edit">
+                                                <button class="btn btn-info btn-sm" type="button">Edit</button>
+                                            </a>
+                                        </td>
                                         <td>       
                                             {!!Form::open(['action' => ['AdminPostsController@destroy',$advertisement->id], 'method' => 'POST' ]) !!}
 
                                             {{Form::hidden('_method', 'DELETE')}}
-                                            {{Form::submit('Remove',['class' => 'btn btn-danger','style' => 'margin:5px'])}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm '])}}
                                         
                                             {!!Form::close() !!}
                                         </td>
@@ -162,7 +165,11 @@
                                         <td>{{$question->id}}</td>
                                         <td>{{$question->title}}</td>
                                         <td>{{$question->subject}}</td>
-                                        <td>Edit</td>
+                                        <td>
+                                            <a class="card-link" href="/adminQuestionBank/{{$question->id}}/edit">
+                                                <button class="btn btn-info btn-sm">Edit</button>
+                                            </a>
+                                        </td>
                                         <td>     
                                             {!!Form::open(['action' => ['AdminQuestionBankController@destroy',$question->id], 'method' => 'POST' ]) !!}
 
