@@ -57,8 +57,12 @@
                     </div>
                 </div>
 
+                <!--For display error message or success messages-->
+                @include('inc.messages')
 
                 <div class="row">
+
+
                     <div class="col" style="margin: 15px 0px;">
 
                         <!--users table-->
@@ -75,21 +79,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
+                                @foreach($data['users']  as $user)
                                     <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>Edit</td>
+                                        <td>    
+                                            {!!Form::open(['action' => ['AdminUserController@destroy',$user->id], 'method' => 'POST' ]) !!}
+
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm'])}}
+                                        
+                                            {!!Form::close() !!}
+                                        </td>
                                        
                                     </tr>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -104,29 +112,28 @@
                                         <th>Ad ID</th>
                                         <th>fullName</th>
                                         <th>subject</th>
-                                        <th>level</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($data['advertisements']  as $advertisement)
                                     <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
+                                        <td>{{$advertisement->id}}</td>
+                                        <td>{{$advertisement->fullName}}</td>
+                                        <td>{{$advertisement->subject}}</td>
+                                        <td>Edit</td>
+                                        <td>       
+                                            {!!Form::open(['action' => ['AdminPostsController@destroy',$advertisement->id], 'method' => 'POST' ]) !!}
+
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger','style' => 'margin:5px'])}}
+                                        
+                                            {!!Form::close() !!}
+                                        </td>
                                        
                                     </tr>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 1</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -149,21 +156,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
+                                @foreach($data['questionBanks']  as $question)
                                     <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
+                                        <td>{{$question->id}}</td>
+                                        <td>{{$question->title}}</td>
+                                        <td>{{$question->subject}}</td>
+                                        <td>Edit</td>
+                                        <td>     
+                                            {!!Form::open(['action' => ['AdminQuestionBankController@destroy',$question->id], 'method' => 'POST' ]) !!}
+
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm', 'style' => 'margin:5px 0px;'])}}
+                                        
+                                            {!!Form::close() !!}
+                                        </td>
                                        
                                     </tr>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 1</td>
-                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>

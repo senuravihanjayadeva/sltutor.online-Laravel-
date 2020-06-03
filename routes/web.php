@@ -54,4 +54,10 @@ Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin');
 
-Route::view('/admin', 'admin');
+Route::resource('admin', 'AdminController');
+
+Route::resource('adminUser', 'AdminUserController');
+
+Route::resource('adminPost', 'AdminPostsController');
+
+Route::resource('adminQuestionBank', 'AdminQuestionBankController');

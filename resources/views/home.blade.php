@@ -77,7 +77,8 @@
                                             
 
                                         <div class="row">
-
+                                            
+                                            <!--For display error message or success messages-->
                                             @include('inc.messages')
                                             
                                             <div class="col-md-12" style="padding: 10px">
