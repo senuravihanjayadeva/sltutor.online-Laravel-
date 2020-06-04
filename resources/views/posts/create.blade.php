@@ -201,6 +201,12 @@
                 <strong> 
                     {{ Form::label('description','Description') }}
                 </strong>
+                <label style="font-size: 12px;">
+                
+                   <span style="font-size: 14px; color:red">Image upload කිරීමට  <i class="fas fa-image" style="font-size: 20px;"></i> icon එක මත click කර ඉන්පසු <span style="font-weight: bold">upload</span> button එක click කර image එකක් තෝරා ගැනීමට <span style="font-weight: bold">choose file </span> click කර image එකක් තෝරා  ගත් පසු <span style="font-weight: bold">send it to the server</span> button එක click කර  ok කරන්න .ඉන්පසු ඔබට අවශ්‍ය ලෙස width, height සකසා ගෙන ok කරන්න </span>
+                   
+                   </label>
+
                 {{ Form::textarea('description','',['id'=>'summary-ckeditor','class' => 'form-control']) }}
 
                 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
@@ -299,7 +305,9 @@
 
             <div class="form-group">
             
-   
+                <strong> 
+                    {{ Form::label('medium','Medium') }}
+                </strong> <br>  
 
             {{ Form::checkbox('medium[]', 'Sinhala Medium') }}
             <strong> 
@@ -324,6 +332,9 @@
 
         <div class="form-group">
             
+            <strong> 
+                {{ Form::label('tuitiontype','Tuition Type') }}
+            </strong>   <br>
 
             {{ Form::checkbox('tutiontype[]', 'Individual') }}
             <strong> 
@@ -348,7 +359,7 @@
         <div class="form-group">
             
             <strong> 
-                {{ Form::label('price','Price') }}
+                {{ Form::label('price','Tuition Fee') }}
             </strong> 
             {{ Form::text('price','',['class' => 'form-control']) }} LKR
         
@@ -357,7 +368,7 @@
         <div class="form-group">
             
             <strong> 
-                {{ Form::label('cover_image','Cover Image( max - 2MB )') }}
+                {{ Form::label('cover_image','Cover Image( Optional | max - 2MB )') }}
             </strong> 
             {{ Form::file('cover_image') }} 
         

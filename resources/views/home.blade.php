@@ -32,13 +32,13 @@
 
                             <center>
 
-                            <a href="user/{{ Auth::user()->id }}/edit"><button class="btn btn-info btn-sm">Edit Account</button></a><br><br>
+                            <a href="user/{{ Auth::user()->id }}/edit"><button class="btn btn-info btn-sm">Edit Account</button></a><br>
 
                             
                             {!!Form::open(['action' => ['UserController@destroy',Auth::user()->id], 'method' => 'POST' ]) !!}
 
                             {{Form::hidden('_method', 'DELETE')}}
-                            {{Form::submit('Remove',['class' => 'btn btn-danger','style' => 'margin:5px'])}}
+                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm','style' => 'margin:5px'])}}
                         
                             {!!Form::close() !!}
                             </center>
