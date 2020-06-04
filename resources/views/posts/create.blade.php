@@ -357,7 +357,7 @@
         <div class="form-group">
             
             <strong> 
-                {{ Form::label('cover_image','Cover Image') }}
+                {{ Form::label('cover_image','Cover Image( max - 2MB )') }}
             </strong> 
             {{ Form::file('cover_image') }} 
         

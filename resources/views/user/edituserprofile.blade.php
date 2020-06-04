@@ -101,7 +101,7 @@
         <div class="form-group">
             
             <strong> 
-                {{ Form::label('ProfileImage','Profile Image') }}
+                {{ Form::label('ProfileImage','Profile Image( max -2mb )') }}
             </strong> 
             {{ Form::file('ProfileImage') }} 
         

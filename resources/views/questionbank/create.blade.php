@@ -12,7 +12,7 @@
         <h2 class="text-center"><br>Ask a question<br><br></h2>
         
         <div class="form-group">
-            <label style="font-size: 12px;">Be specific and imagine you’re asking a question to another personn<br></label> <br>               
+            <label style="font-size: 12px;"> ඔබගේ ප්‍රශ්නයට අදාලව පැහැදිලි මාතෘකාවක් යොදන්න Include a clear topic related to your question<br></label> <br>               
             <strong> 
                 {{ Form::label('Title','Title') }}
             </strong>
@@ -105,7 +105,9 @@
         
         </div>
 
-           <label style="font-size: 12px;">Include all the information someone would need to answer your question<br></label>
+           <label style="font-size: 12px;">
+           
+            ඔබේ ප්‍රශ්නයට පිළිතුරු දීමට යමෙකුට අවශ්‍ය සියලු තොරතුරු ඇතුළත් කරන්න Include all the information someone would need to answer your question<br></label>
 
            <div class="form-group">
                 
