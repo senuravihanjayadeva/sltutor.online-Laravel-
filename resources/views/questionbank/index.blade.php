@@ -41,6 +41,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">QUESTION BANK</h5>
+                <p class="card-text">" SLTUTOR QUESTION BANK " වෙත ඔබව සාදරයෙන් පිලිගමු.උසස් පෙල / සාමාන්‍ය පෙළ විෂය ගැටළු සාකච්ඡා කිරීම සඳහා මෙම වෙබ් අඩවිය යොදා ගන්න.</p>
                 <p class="card-text">Main objective of SLTUTOR is to discuss your subject(A-Level, O-Level, Other ) related issues & find solutions to them</p>
               
               </div>
@@ -102,14 +103,15 @@
           **----->
         
           <div class="row" style="margin: 10px; padding:5px;">
-          
+            
             <div class="col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center">
               <center>
+              
                 <form action="/search" method="POST" role="search">
                   {{ csrf_field() }}
                   <div class="input-group">
                       
-                  <select name="search">
+                  <select name="search" style="margin: 5px; padding:3px">
                   <option selected value="Select Subject">Select Subject</option>
                   <option disabled>---A/L Subject---</option>
                   <option value="Combined Maths">Combined Maths</option>
@@ -149,17 +151,18 @@
                      
     
     
-    
-                  <button type="submit" class="btn  btn-outline-info" style="margin: 0px 5px;">
-                        <span class="glyphicon glyphicon-search">Search</span>
+                 
+                  <button type="submit" class="btn btn-sm btn-outline-info text-center" style="margin: auto;">
+                        <span class="glyphicon glyphicon-search ">Search</span>
                   </button>
+                  
                   </span>
                   </div>
               </form>
     
             </center>
             </div>
-          
+         
             </div>
           
     
@@ -173,6 +176,7 @@
 
 
         <div class="row justify-content-center" style="background-color: #ffffff;">
+          
           <div class="col-md-12"  style="margin: 10px 0 px; padding: -3px;">
 
         <!--****************************** Question Bank Grid****************************-->
@@ -188,7 +192,7 @@
             <div class="border rounded-0 border-info shadow" style="background-color: #ffffff; padding: 0px;">
        
            
-              <div class="row">
+              <div class="row" style="padding: 10px 2px">
 
                 <div class="col-sm-12 col-md-3 d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center" >
 

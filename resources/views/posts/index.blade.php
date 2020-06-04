@@ -243,6 +243,21 @@
 
                                         <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{$question->title}}  </h6>
 
+                                        <!-- Count no of comments for each Question-->
+                                        <?php $countComments = 0 ?>
+                                        @foreach($data['comments'] as $comments)
+
+                                        @if( $comments->commentable_id ==  $question->id)
+                       
+                                        <?php $countComments = $countComments + 1 ?> 
+                        
+                                        @endif
+
+                                        @endforeach
+
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"><?php echo $countComments; ?>  answers |     <i class="fas fa-eye shadow-sm  d-sm-block h4 text-body m-0" style="padding:2px;font-size: 15px; background-color:none"></i> {{$question->viewCount}}</h6>
+                                        <!-- End of Count no of comments for each Question-->
+
                                         <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> {{$question->created_at}}  </h6>
 
                                         </a>

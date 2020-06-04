@@ -36,10 +36,13 @@ class PostsController extends Controller
         $limit = 10;
         $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
 
+        $comments = DB::select("select * from comments");
+
         $data = array(
 
             'posts' =>  $posts,
             'questions' => $questions,
+            'comments' => $comments,
         );
 
 
