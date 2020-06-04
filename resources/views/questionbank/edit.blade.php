@@ -105,27 +105,6 @@
                 'Art' => 'Art', 
                 'Dancing' => 'Dancing', 
                 'Health & Physical Education' => 'Health & Physical Education',
-                
-                ], $question->subject,['id' => 'olsub','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
-            
-            </div>
-
-            @if( $question->level == 'Advanced Level' )
-
-            <div class="col-md-6" id="alsubblock" style="display: block" >
-
-            @else
-
-            <div class="col-md-6" id="alsubblock" style="display: none" >
-
-            @endif
-
-                <strong> 
-                    {{ Form::label('subject','Subject') }}
-                </strong>   
-
-                {{ Form::select('subject', [
-
                     'Combined Maths' => 'Combined Maths', 
                     'Biology' => 'Biology', 
                     'Physics' => 'Physics', 
@@ -145,7 +124,7 @@
                     'General English' => 'General English',
                     'Logic' => 'Logic',
                     
-                    ], $question->subject,['id' => 'alsub','disabled'=>'true','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                    ], $question->subject,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
                 
                 </div>
         

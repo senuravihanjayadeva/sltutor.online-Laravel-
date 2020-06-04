@@ -31,9 +31,19 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts =  Post::orderBy('id', 'desc')->paginate(1); //add pagination
-        $QuestionBanks = QuestionBank::orderBy('id', 'desc');
-        return view('posts.index', ['posts' => $posts, 'QuestionBanks' => $QuestionBanks]);
+        $posts =  Post::orderBy('id', 'desc')->paginate(20); //add pagination
+
+        $limit = 10;
+        $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
+
+        $data = array(
+
+            'posts' =>  $posts,
+            'questions' => $questions,
+        );
+
+
+        return view('posts.index', compact('data'));
     }
 
     /**

@@ -50,7 +50,7 @@ class QuestionBankController extends Controller
 
     public function index()
     {
-        $comments = DB::select("select commentable_id,count(*) as count  from comments group by commentable_id");
+        $comments = DB::select("select * from comments");
 
         $questions = QuestionBank::all();
 

@@ -2,6 +2,11 @@
 
 @section('content')
 
+<hr>
+
+
+
+
 <section>
 
 
@@ -11,6 +16,12 @@
 
 
         <div class="col-md-8">
+
+            <div class="col-md-12" style="padding: 10px;">
+                                                
+                <a href="/questionbank/create" class="btn btn-info btn-sm">Ask Questions</a>
+            
+            </div>
 
                   <!--For display error message or success messages-->
 

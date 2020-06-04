@@ -175,20 +175,7 @@
                 'Music' => 'Music', 
                 'Art' => 'Art', 
                 'Dancing' => 'Dancing', 
-                'Health & Physical Education' => 'Health & Physical Education',
-                
-                ], $post->subject ,['id' => 'olsub','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
-              
-            </div>
-
-             
-            
-            <div class="col-md-12" id="alsubblock" style="display:none;">
-
-            {{ Form::select('subject', [
-
-
-                  
+                'Health & Physical Education' => 'Health & Physical Education',   
                 'Combined Maths' => 'Combined Maths', 
                 'Biology' => 'Biology', 
                 'Physics' => 'Physics', 
@@ -210,7 +197,7 @@
                 
               
 
-                ], $post->subject,['id' => 'alsub','disabled'=>'true','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                ], $post->subject,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
 
             </div>
 

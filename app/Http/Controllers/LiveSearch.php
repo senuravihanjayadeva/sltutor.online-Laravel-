@@ -53,4 +53,26 @@ class LiveSearch extends Controller
 
         return view('PastPapers.index', compact('data'));
     }
+
+    function actionPosts(Request $request)
+    {
+
+        $q = $request->input('search');
+
+        $posts =  Post::where('subject', 'LIKE', '%' . $q . '%')->orWhere('district', 'LIKE', '%' . $q . '%')->orWhere('town', 'LIKE', '%' . $q . '%')->orWhere('level', 'LIKE', '%' . $q . '%')->orWhere('tutiontype', 'LIKE', '%' . $q . '%')->orWhere('medium', 'LIKE', '%' . $q . '%')
+            ->orWhere('price', 'LIKE', '%' . $q . '%')
+            ->orWhere('fullName', 'LIKE', '%' . $q . '%')->paginate(20);
+
+        $limit = 10;
+        $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
+
+        $data = array(
+
+            'posts' =>  $posts,
+            'questions' => $questions,
+        );
+
+
+        return view('posts.index', compact('data'));
+    }
 }

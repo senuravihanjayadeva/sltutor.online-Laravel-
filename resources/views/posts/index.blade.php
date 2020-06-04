@@ -43,12 +43,20 @@
                     <div class="col-md-8 offset-md-1 text-left" style="margin: 5px 0px 0px 10px;padding: 0px;">
                         <div class="card text-left d-xl-flex justify-content-xl-start m-auto" style="max-width: 850px;margin: 0px;">
                             <div class="card-body" style="font-size: 10px;padding: 0px;margin: 5px;">
-                                <form class="d-flex align-items-center" style="font-size: 10px;"><i class="fas fa-search shadow-sm d-none d-sm-block h4 text-body m-0" style="font-size: 20px;"></i><input class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search topics or keywords"
-                                        name="searchbar" style="font-size: 15px;"><button class="btn btn-success btn-lg" type="submit" style="font-size: 15px;">Search</button></form>
+                                
+                                <form action="/searchposts" method="POST" role="search" class="d-flex align-items-center" style="font-size: 10px;">
+                                    {{ csrf_field() }}
+                                    <i class="fas fa-search shadow-sm d-none d-sm-block h4 text-body m-0" style="font-size: 20px;"></i>
+                                    <input class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search topics or keywords" name="search" style="font-size: 15px;">
+                                    <button class="btn btn-success btn-lg" type="submit" style="font-size: 15px;">Search</button>
+
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
                 <hr>
 
                  <!--For display error message or success messages-->
@@ -66,9 +74,9 @@
                                         Posts
                                 *************************************************************************-->
 
-                                @if(count($posts) > 0)
+                                @if(count($data['posts']) > 0)
 
-                                @foreach($posts as $post)
+                                @foreach($data['posts'] as $post)
                                 <a href="/posts/{{$post->id}}">
                                 <div class="col-md-4 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
                                     <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
@@ -148,7 +156,7 @@
                             <div class="row">
                                 <div class="col-md-12 d-xl-flex justify-content-xl-center">
                             
-                                  {{ $posts->links() }} 
+                                  {{ $data['posts']->links() }} 
                                
                                 </div>
                             </div>
@@ -157,26 +165,90 @@
                                     End of Pagination
                         ***********************************************************-->
 
-            
+      
                  
                     </div>
 
                     <div class="col-auto col-md-4">
                         <div class="row">
 
+                            <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
+                                <div class="card text-center">
+                                    <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
+       
+                                        <!-- Number of ALL teacher-->
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{count($data['posts'])}} Teachers</h6>
+                                         <!-- Number of ALL teacher-->
+
+                                        <!-- Number of AL teacher-->
+                                        <?php $countALTeachers = 0 ?>
+                                        @foreach($data['posts'] as $AdvencedLevelTeachers)
+
+                                            @if($AdvencedLevelTeachers->level == 'Advanced Level' )
+
+                                            <?php  $countALTeachers = $countALTeachers + 1; ?>
+
+                                            @endif
+
+                                        @endforeach
+
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> 
+                                        <?php echo $countALTeachers ?> Advanced Level Teachers 
+                                        </h6>
+                                       <!--End of  Number of AL teacher-->
+
+                                       <!-- Number of AL teacher-->
+                                       <?php $countOLTeachers = 0 ?>
+                                       @foreach($data['posts'] as $OrdinaryLevelTeachers)
+                
+                                            @if($OrdinaryLevelTeachers->level == 'Ordinary Level' )
+                                                <?php  $countOLTeachers = $countOLTeachers + 1; ?>
+                                            @endif
+
+                                        @endforeach
+                
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">
+                                        
+                                            <?php echo $countOLTeachers ?> Ordinary Level Teachers 
+                                        </h6>
+                                        <!--End of  Number of AL teacher-->
+                                   
+                                 
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
                                 <div class="card text-center">
-                                    <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;"><input class="border rounded-0" type="search" style="background-color: rgb(255,255,255);" placeholder="search" required=""><i class="fa fa-search" style="margin: 2px;"></i>
-                                        <hr>
+                                    <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
+                                       
+                                           
+                                      
+                                                
+                                        <a href="/questionbank/create" class="btn btn-info btn-sm">Ask Questions</a>
+                                        
+                                      <hr>
+                                  
+                                        <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">Question Bank  <br></h5> 
 
-                                        <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">Categories<br></h5>
+                                        
+    
+                                       
                                         <div class="float-left float-md-right mt-5 mt-md-0 search-area"></div>
-                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">Maths</h6>
+                                        @foreach($data['questions'] as $question)
                                         <hr>
-                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">Biology</h6>
-                                        <hr>
-                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">Chemistry</h6>
+                                        <a href="/questionbank/{{$question->id}}">
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{$question->subject}}</h6>
+
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{$question->title}}  </h6>
+
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> {{$question->created_at}}  </h6>
+
+                                        </a>
+                                       
+                                        @endforeach
+                                 
                                     </div>
                                 </div>
                             </div>

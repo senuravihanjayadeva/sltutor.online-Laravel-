@@ -150,7 +150,7 @@
     
     
     
-                  <button type="submit" class="btn btn-default">
+                  <button type="submit" class="btn  btn-outline-info" style="margin: 0px 5px;">
                         <span class="glyphicon glyphicon-search">Search</span>
                   </button>
                   </span>
@@ -198,16 +198,19 @@
                     <div class="col text-center">
 
                 
-
+                      <!-- Count no of comments for each Question-->
+                      <?php $countComments = 0 ?>
                       @foreach($data['comments'] as $comments)
 
                         @if( $comments->commentable_id ==  $question->id)
                        
-                        <h1 id="commentCount" style="font-size: 15px;">{{$comments->count}}</h1> 
+                        <?php $countComments = $countComments + 1 ?> 
                         
                         @endif
 
                       @endforeach
+
+                      <h1 id="commentCount" style="font-size: 15px;"><?php echo $countComments; ?> </h1>
 
                       <p style="font-size: 12px;">answers</p>
                  

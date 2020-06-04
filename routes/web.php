@@ -45,6 +45,7 @@ Route::post('/search', 'LiveSearch@action');
 
 Route::post('/searchpapers', 'LiveSearch@actionPapers');
 
+Route::post('/searchposts', 'LiveSearch@actionPosts');
 
 //MultiUserLevel Routes
 
