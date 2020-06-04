@@ -57,7 +57,7 @@
                         id="navcol-1">
                         <ul class="nav navbar-nav">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Find Teachers</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Create Your Ad</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Promote ur Tuition</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/questionbank">Question Bank</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/pastpapers">PastPapers</a></li>
                             <!--

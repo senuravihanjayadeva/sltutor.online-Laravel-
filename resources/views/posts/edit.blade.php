@@ -9,7 +9,7 @@
                 <div class="intro">
                     <h2>SLTUTOR</h2>
                     <p><br>Students are unique. They may go to the same school and be in the same grade as other students, but they do not think or learn alike. Be willing to change the way you teach sometimes so the student can learn in the best way
-                        for him<br><br></p><a class="btn btn-primary" role="button" href="#">Join with us</a></div>
+                        for him<br><br></p><a class="btn btn-primary" role="button" href="/questionbank">Join with us</a></div>
             </div>
             <div class="col-sm-4">
                 <div class="d-none d-md-block iphone-mockup"><img class="d-xl-flex device" src="/storage/assets/img/undraw_teaching_f1cm.svg"></div>
