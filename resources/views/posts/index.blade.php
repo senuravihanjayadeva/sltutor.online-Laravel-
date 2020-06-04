@@ -113,6 +113,8 @@
                                     </div>
                                 </div>
                                 </a>
+
+                            
                                 @endforeach  
 
                                 @else 
@@ -142,15 +144,20 @@
                                     Pagination
                             ***********************************************************-->
 
-                        <div class="row">
-                            <div class="col-md-12 d-xl-flex justify-content-xl-center">
-                                {{$posts->links()}}
+                
+                            <div class="row">
+                                <div class="col-md-12 d-xl-flex justify-content-xl-center">
+                            
+                                  {{ $posts->links() }} 
+                               
+                                </div>
                             </div>
-                        </div>
-                        
+
                         <!--***********************************************************
                                     End of Pagination
                         ***********************************************************-->
+
+            
                  
                     </div>
 
@@ -162,6 +169,7 @@
                                 <div class="card text-center">
                                     <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;"><input class="border rounded-0" type="search" style="background-color: rgb(255,255,255);" placeholder="search" required=""><i class="fa fa-search" style="margin: 2px;"></i>
                                         <hr>
+
                                         <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">Categories<br></h5>
                                         <div class="float-left float-md-right mt-5 mt-md-0 search-area"></div>
                                         <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">Maths</h6>

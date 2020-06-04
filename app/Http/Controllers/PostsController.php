@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\QuestionBank;
 
 
 use DB;
@@ -28,11 +30,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //$posts = Post::all();
-        //$posts = DB::select('select * from posts );
-        //posts = Post::orderBy('id', 'desc')->take(2)->get();
-        $posts =  Post::orderBy('id', 'desc')->paginate(15); //add pagination
-        return view('posts.index')->with('posts', $posts);
+
+        $posts =  Post::orderBy('id', 'desc')->paginate(1); //add pagination
+        $QuestionBanks = QuestionBank::orderBy('id', 'desc');
+        return view('posts.index', ['posts' => $posts, 'QuestionBanks' => $QuestionBanks]);
     }
 
     /**
