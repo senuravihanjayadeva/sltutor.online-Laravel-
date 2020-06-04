@@ -43,8 +43,17 @@
                     <div class="col-md-8 offset-md-1 text-left" style="margin: 5px 0px 0px 10px;padding: 0px;">
                         <div class="card text-left d-xl-flex justify-content-xl-start m-auto" style="max-width: 850px;margin: 0px;">
                             <div class="card-body" style="font-size: 10px;padding: 0px;margin: 5px;">
-                                <form class="d-flex align-items-center" style="font-size: 10px;"><i class="fas fa-search shadow-sm d-none d-sm-block h4 text-body m-0" style="font-size: 20px;"></i><input class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search topics or keywords"
-                                        name="searchbar" style="font-size: 15px;"><button class="btn btn-success btn-lg" type="submit" style="font-size: 15px;">Search</button></form>
+                                
+                                <!--search bar-->
+                                <form action="/searchpapers" method="POST" role="search" class="d-flex align-items-center" style="font-size: 10px;">
+                                    {{ csrf_field() }}
+                                    <i class="fas fa-search shadow-sm d-none d-sm-block h4 text-body m-0" style="font-size: 20px;"></i>
+                                    
+                                    <input name="search" class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search keywords ( year, grade, school )" style="font-size: 15px;">
+                                        
+                                        <button class="btn btn-success btn-lg" type="submit" style="font-size: 15px;">Search</button>
+                                    </form>
+                                    <!--end of search bar-->
                             </div>
                         </div>
                     </div>
@@ -70,7 +79,7 @@
 
                                 @foreach($data['PastPapers'] as $PastPaper)
                                 <a href="{{$PastPaper->link}}" target="_blank">
-                                <div class="col-md-4 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
+                                <div class="col-md-3 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
                                     <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
 
 

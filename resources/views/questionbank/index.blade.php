@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<hr>
 <div class="row">
     <div class="col-md-2 d-xl-flex align-items-xl-start" style="margin: 25px 15px 0px ;">
 

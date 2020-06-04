@@ -94,7 +94,7 @@
 
 
                                             <div class="col-md-6" style="padding: 10px">
-                                                <a href="/posts/create" class="btn btn-success">Create a Post</a>
+                                                <a href="/posts/create" class="btn btn-success">Promote ur Tuition</a>
                                                 
                                             </div>
 
@@ -129,7 +129,7 @@
                         
                         {{ Form::radio('option', 'Advertisements',false,['onclick' => 'checkfunc(1)']) }}
                         <strong> 
-                            {{ Form::label('option','Advertisements have You Posted') }}
+                            {{ Form::label('option','Advertisements You have Posted') }}
                         </strong>
                     
                     </div>

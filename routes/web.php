@@ -43,6 +43,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/search', 'LiveSearch@action');
 
+Route::post('/searchpapers', 'LiveSearch@actionPapers');
+
 
 //MultiUserLevel Routes
 

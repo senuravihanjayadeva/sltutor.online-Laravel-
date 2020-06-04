@@ -10,6 +10,7 @@ use App\QuestionBank;
 use App\Admin;
 use App\PastPaper;
 use DB;
+use Illuminate\Support\Facades\Auth; //FOR Auth Class
 
 
 
@@ -22,7 +23,6 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('admins');
     }
 
 
@@ -33,6 +33,12 @@ class AdminController extends Controller
      */
     public function index()
     {
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
+
         $users = User::all();
         $advertisements = Post::all();
         $questionBanks = QuestionBank::all();
