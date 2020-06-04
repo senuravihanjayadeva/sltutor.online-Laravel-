@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth; //FOR Auth Class
 use App\PastPaper;
 use App\Post;
-use App\DB;
+
+
+use DB;
 
 class PastPapersController extends Controller
 {
@@ -24,12 +26,15 @@ class PastPapersController extends Controller
     {
 
         $PastPapers = PastPaper::all();
-
+        $limit = 10;
+        $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
+        $comments = DB::select("select * from comments");
 
         $data = array(
 
             'PastPapers' =>  $PastPapers->sortByDesc('id'),
-
+            'questions' => $questions,
+            'comments' => $comments,
         );
 
 

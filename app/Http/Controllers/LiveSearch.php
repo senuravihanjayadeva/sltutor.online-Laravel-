@@ -41,13 +41,17 @@ class LiveSearch extends Controller
 
         $PastPapers = PastPaper::where('year', 'LIKE', '%' . $q . '%')->orWhere('school', 'LIKE', '%' . $q . '%')->orWhere('subject', 'LIKE', '%' . $q . '%')->orWhere('grade', 'LIKE', '%' . $q . '%')->orWhere('term', 'LIKE', '%' . $q . '%')->orWhere('medium', 'LIKE', '%' . $q . '%')->get();
 
+        $limit = 10;
+        $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
 
+        $comments = DB::select("select * from comments");
 
 
         $data = array(
 
             'PastPapers' =>  $PastPapers->sortByDesc('id'),
-
+            'questions' => $questions,
+            'comments' => $comments,
         );
 
 
@@ -66,10 +70,13 @@ class LiveSearch extends Controller
         $limit = 10;
         $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
 
+        $comments = DB::select("select * from comments");
+
         $data = array(
 
             'posts' =>  $posts,
             'questions' => $questions,
+            'comments' => $comments,
         );
 
 

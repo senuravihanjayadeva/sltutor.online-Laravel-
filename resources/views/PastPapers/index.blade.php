@@ -40,6 +40,7 @@
         <div style="margin: 5px;">
             <div class="container text-center" style="background-color: #ffffff;">
                 <div class="row text-left justify-content-around">
+
                     <div class="col-md-8 offset-md-1 text-left" style="margin: 5px 0px 0px 10px;padding: 0px;">
                         <div class="card text-left d-xl-flex justify-content-xl-start m-auto" style="max-width: 850px;margin: 0px;">
                             <div class="card-body" style="font-size: 10px;padding: 0px;margin: 5px;">
@@ -65,7 +66,7 @@
                  @include('inc.messages');
 
                 <div class="row justify-content-center">
-                    <div class="col-auto col-md-10 pulse animated">
+                    <div class="col-auto col-md-8 pulse animated">
                         
 
                         <section>
@@ -79,7 +80,7 @@
 
                                 @foreach($data['PastPapers'] as $PastPaper)
                                 <a href="{{$PastPaper->link}}" target="_blank">
-                                <div class="col-md-3 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
+                                <div class="col-md-4 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
                                     <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
 
 
@@ -161,6 +162,61 @@
                  
                     </div>
 
+                    <div class="col-auto col-md-4 pulse animated">
+
+
+
+                        <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
+                            <div class="card text-center">
+                                <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
+                                   
+                                       
+                                  
+                                            
+                                    <a href="/questionbank/create" class="btn btn-info btn-sm">Ask Questions</a>
+                                    
+                                  <hr>
+                              
+                                    <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">Question Bank  <br></h5> 
+
+                                    
+
+                                   
+                                    <div class="float-left float-md-right mt-5 mt-md-0 search-area"></div>
+                                    @foreach($data['questions'] as $question)
+                                    <hr>
+                                    <a href="/questionbank/{{$question->id}}">
+                                    <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{$question->subject}}</h6>
+
+                                    <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{$question->title}}  </h6>
+
+                                    <!-- Count no of comments for each Question-->
+                                    <?php $countComments = 0 ?>
+                                    @foreach($data['comments'] as $comments)
+
+                                    @if( $comments->commentable_id ==  $question->id)
+                   
+                                    <?php $countComments = $countComments + 1 ?> 
+                    
+                                    @endif
+
+                                    @endforeach
+
+                                    <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"><?php echo $countComments; ?>  answers |     <i class="fas fa-eye shadow-sm  d-sm-block h4 text-body m-0" style="padding:2px;font-size: 15px; background-color:none"></i> {{$question->viewCount}}</h6>
+                                    <!-- End of Count no of comments for each Question-->
+
+                                    <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> {{$question->created_at}}  </h6>
+
+                                    </a>
+                                   
+                                    @endforeach
+                             
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
 
         
 
