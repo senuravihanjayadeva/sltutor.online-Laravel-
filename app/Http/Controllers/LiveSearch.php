@@ -37,9 +37,50 @@ class LiveSearch extends Controller
     function actionPapers(Request $request)
     {
 
-        $q = $request->input('search');
 
-        $PastPapers = PastPaper::where('year', 'LIKE', '%' . $q . '%')->orWhere('school', 'LIKE', '%' . $q . '%')->orWhere('subject', 'LIKE', '%' . $q . '%')->orWhere('grade', 'LIKE', '%' . $q . '%')->orWhere('term', 'LIKE', '%' . $q . '%')->orWhere('medium', 'LIKE', '%' . $q . '%')->get();
+        $subject = $request->input('subject');
+        $grade = $request->input('grade');
+        $term = $request->input('term');
+
+        if ($subject == null && $grade != null && $term != null) {
+
+            $PastPapers = PastPaper::where('grade', 'LIKE', '%' . $grade . '%')->where('term', 'LIKE', '%' . $term . '%')->get();
+        }
+        if ($grade == null && $subject != null && $term != null) {
+
+            $PastPapers = PastPaper::where('subject', 'LIKE', '%' . $subject . '%')->where('term', 'LIKE', '%' . $term . '%')->get();
+        }
+        if ($term == null && $subject != null && $grade != null) {
+
+            $PastPapers = PastPaper::where('subject', 'LIKE', '%' . $subject . '%')->where('grade', 'LIKE', '%' . $grade . '%')->get();
+        }
+
+        if ($term == null && $grade == null && $subject != null) {
+
+            $PastPapers = PastPaper::where('subject', 'LIKE', '%' . $subject . '%')->where('grade', 'LIKE', '%' . $grade . '%')->get();
+        }
+        if ($subject == null && $grade == null && $term != null) {
+
+            $PastPapers = PastPaper::where('term', 'LIKE', '%' . $term . '%')->get();
+        }
+        if ($subject == null && $term == null && $grade != null) {
+
+            $PastPapers = PastPaper::where('grade', 'LIKE', '%' . $grade . '%')->get();
+        }
+        if ($grade == null && $term == null && $subject != null) {
+
+            $PastPapers = PastPaper::where('subject', 'LIKE', '%' . $subject . '%')->get();
+        }
+        if ($subject != null && $grade != null && $term != null) {
+
+            $PastPapers = PastPaper::where('subject', 'LIKE', '%' . $subject . '%')->where('grade', 'LIKE', '%' . $grade . '%')->where('term', 'LIKE', '%' . $term . '%')->get();
+        }
+        if ($subject == null && $grade == null && $term == null) {
+
+            $PastPapers = PastPaper::all();
+        }
+
+
 
         $limit = 10;
         $questions =  DB::select("select *  from question_banks order by id desc limit $limit");

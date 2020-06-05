@@ -320,7 +320,7 @@
     <div class="form-group">
         
         <strong> 
-            {{ Form::label('medium','Medium') }}
+            {{ Form::label('medium','Language') }}
         </strong> 
 
         {{ Form::text('medium',$post->medium,['class' => 'form-control','placeholder' => 'Sinhala Medium , English Medium , Tamil Medium']) }} 

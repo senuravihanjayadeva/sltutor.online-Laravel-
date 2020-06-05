@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
         <section id="carousel">
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner" role="listbox">
@@ -230,8 +232,11 @@
                                         
                                       <hr>
                                   
-                                        <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">Question Bank  <br></h5> 
-
+                                        <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">
+                                            Question Bank  <br>
+                                        
+                                        </h5> 
+                                        <span  style="font-size:13px" class="d-xl-flex justify-content-xl-start ">Recent questions</span>
                                         
     
                                        

@@ -22,6 +22,7 @@
 <!--For display error message or success messages-->
 <div class="container">
 
+    
 @include('inc.messages');
 
 </div>
@@ -95,7 +96,7 @@
                             <strong> 
                                 {{ Form::label('age','Age') }}
                             </strong>
-                            {{ Form::text('age','',['class' => 'form-control']) }}
+                            {{ Form::number('age','',['class' => 'form-control']) }}
                         
                         </div>
                     </div>
@@ -227,7 +228,7 @@
                     <strong> 
                         {{ Form::label('email','Email') }}
                     </strong>
-                    {{ Form::text('email','',['class' => 'form-control']) }}
+                    {{ Form::email('email','',['class' => 'form-control']) }}
                 
                 </div>
             </div>
@@ -238,12 +239,12 @@
                     <strong> 
                         {{ Form::label('mobile','Mobile') }}
                     </strong>
-                    {{ Form::text('mobile','',['class' => 'form-control']) }}
+                    {{ Form::tel('mobile','',['class' => 'form-control']) }}
                 
                 </div>
             </div>
         </div>
-        <hr>
+       
         <div class="form-row">
             <div class="col-sm-12 col-md-6">
 
@@ -306,23 +307,23 @@
             <div class="form-group">
             
                 <strong> 
-                    {{ Form::label('medium','Medium') }}
+                    {{ Form::label('medium','Language') }}
                 </strong> <br>  
 
             {{ Form::checkbox('medium[]', 'Sinhala Medium') }}
-            <strong> 
+           
                 {{ Form::label('medium','Sinhala Medium') }}
-            </strong> <br>
+            <br>
 
             {{ Form::checkbox('medium[]', 'English Medium') }}
-            <strong> 
+            
                 {{ Form::label('medium','English Medium') }}
-            </strong> <br>
+            <br>
 
             {{ Form::checkbox('medium[]', 'Tamil Medium') }}
-            <strong> 
+            
                 {{ Form::label('medium','Tamil Medium') }}
-            </strong> <br>
+            <br>
                 
             </div>
 
@@ -337,19 +338,19 @@
             </strong>   <br>
 
             {{ Form::checkbox('tutiontype[]', 'Individual') }}
-            <strong> 
+           
                 {{ Form::label('tutiontype','Individual') }}
-            </strong> <br>
+            <br>
 
             {{ Form::checkbox('tutiontype[]', 'Group') }}
-            <strong> 
+          
                 {{ Form::label('tutiontype','Group') }}
-            </strong> <br>
+          <br>
 
             {{ Form::checkbox('tutiontype[]', 'Other') }}
-            <strong> 
+           
                 {{ Form::label('tutiontype','Other') }}
-            </strong> <br>
+           <br>
 
         </div>
 
@@ -361,7 +362,7 @@
             <strong> 
                 {{ Form::label('price','Tuition Fee') }}
             </strong> 
-            {{ Form::text('price','',['class' => 'form-control']) }} LKR
+            {{ Form::number('price','',['class' => 'form-control']) }} LKR
         
         </div>
 
@@ -415,7 +416,10 @@ function checkfunc(x)
     }
 }
 
+
+
 </script>
+
 
 
 @endsection

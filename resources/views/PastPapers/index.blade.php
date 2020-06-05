@@ -9,21 +9,21 @@
                         <div class="jumbotron pulse animated hero-nature carousel-hero">
                             <h1 class="hero-title">SLTUTOR</h1>
                             <p class="hero-subtitle">Education is the passport to the future, for tomorrow belongs to those who prepare for it today</p>
-                            <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                            <p><a class="btn btn-primary hero-button plat" role="button" href="/questionbank">Learn more</a></p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="jumbotron pulse animated hero-photography carousel-hero">
                             <h1 class="hero-title">SLTUTOR</h1>
                             <p class="hero-subtitle">An investment in knowledge pays the best interest</p>
-                            <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                            <p><a class="btn btn-primary hero-button plat" role="button" href="/questionbank">Learn more</a></p>
                         </div>
                     </div>
                     <div class="carousel-item active">
                         <div class="jumbotron pulse animated hero-technology carousel-hero">
                             <h1 class="hero-title">SLTUTOR</h1>
                             <p class="hero-subtitle">FIND THE BEST TUTOR FOR YOUR LEARNING GOALS</p>
-                            <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                            <p><a class="btn btn-primary hero-button plat" role="button" href="/questionbank">Learn more</a></p>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                         <div class="card text-left d-xl-flex justify-content-xl-start m-auto" style="max-width: 850px;margin: 0px;">
                             <div class="card-body" style="font-size: 10px;padding: 0px;margin: 5px;">
                                 
-                                <!--search bar-->
+                                {{-- <!--search bar-->
                                 <form action="/searchpapers" method="POST" role="search" class="d-flex align-items-center" style="font-size: 10px;">
                                     {{ csrf_field() }}
                                     <i class="fas fa-search shadow-sm d-none d-sm-block h4 text-body m-0" style="font-size: 20px;"></i>
@@ -54,7 +54,98 @@
                                         
                                         <button class="btn btn-success btn-lg" type="submit" style="font-size: 15px;">Search</button>
                                     </form>
-                                    <!--end of search bar-->
+                                    <!--end of search bar--> --}}
+
+                                                <!--*
+          **
+          **
+          ** Search Form
+          **
+          **
+          **----->
+        
+          <div class="row" style="margin: 10px; padding:5px;">
+            
+            <div class="col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center">
+              <center>
+              
+                <form action="/searchpapers" method="POST" role="search">
+                  {{ csrf_field() }}
+                  <div class="input-group">
+                      
+                  <select name="subject" style="margin: 5px; font-size:14px; padding:5px;">
+                  <option selected value="Select Subject" disabled>Select Subject</option>
+                  <option disabled>---A/L Subject---</option>
+                  <option value="Combined Maths">Combined Maths</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Agriculture">Agriculture</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Chemistry">Chemistry</option>
+                  <option value="A/L ICT">A/L ICT</option> 
+                  <option value="Business Studies">Business Studies</option>
+                  <option value="Economics">Economics</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="A/L Sinhala">Sinhala</option>
+                  <option value="Political Science">Political Science</option>
+                  <option value="Buddist Civilization">Buddist Civilization</option>
+                  <option value="A/L Geography">A/L Geography</option>
+                  <option value="Engineering Technology">Engineering Technology</option>  
+                  <option value="Bio Systems Technology">Bio Systems Technology</option>
+                  <option value="Science for Technology">Science for Technology</option>
+                  <option value="General English">General English</option>
+                  <option value="Logic">Logic</option>
+                      
+                  <option disabled>---O/L Subjects---</option>
+                  <option value="Maths">Maths</option>
+                  <option value="Science">Science</option>
+                  <option value="History">History</option>
+                  <option value="Sinhala">Sinhala</option>
+                  <option value="English">English</option>
+                  <option value="Buddhism">Buddhism</option>
+                  <option value="Information & Communication Technology">Information & Communication Technology</option>
+                  <option value="Geography">Geography</option>
+                  <option value="Music">Music</option>
+                  <option value="Art">Art</option>
+                  <option value="Dancing">Dancing</option>
+                  <option value="Health & Physical Education">Health & Physical Education</option>
+               </select>
+                         
+                     
+               <select name="grade" style="margin: 5px; font-size:14px; padding:5px;">
+                <option selected value="Select Subject" disabled>Select Grade</option>
+                <option value="Grade 12">Grade 12</option>
+                <option value="Grade 13">Grade 13</option>
+               </select>
+
+               <select name="term" style="margin: 5px; font-size:14px; padding:5px;">
+                <option selected value="Select Subject" disabled>Select Term</option>
+                <option value="1st Term">1st Term</option>
+                <option value="2nd Term">2nd Term</option>
+                <option value="3rd Term">3rd Term</option>
+               </select>
+    
+                 
+                  <button type="submit" class="btn btn-sm btn-outline-info text-center" style="margin: auto; font-size:14px;">
+                        <span class="glyphicon glyphicon-search ">Search</span>
+                  </button>
+                  
+                  </span>
+                  </div>
+              </form>
+    
+            </center>
+            </div>
+         
+            </div>
+          
+    
+              <!--*
+              **
+              **
+              ** End of Search Form
+              **
+              **
+              **----->
                             </div>
                         </div>
                     </div>
@@ -179,7 +270,7 @@
                               
                                     <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">Question Bank  <br></h5> 
 
-                                    
+                                    <span  style="font-size:13px" class="d-xl-flex justify-content-xl-start ">Recent questions</span>
 
                                    
                                     <div class="float-left float-md-right mt-5 mt-md-0 search-area"></div>

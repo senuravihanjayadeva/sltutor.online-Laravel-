@@ -60,8 +60,11 @@
 
     </head>
     <body>
-      
-        <div id="page-container">
+
+    <!--CSS Spinner Pre Loader-->
+    <div class="spinner-wrapper">
+    <div class="spinner"></div>
+    </div>
 
         <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
             <div class="container"><a class="navbar-brand" href="/"> <img src="/storage/assets/img/logo.png" style="width: 60px">SLTUTOR</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -132,8 +135,8 @@
                             <h3>Services</h3>
                             <ul>
                                 <li><a href="/posts">Find Teachers</a></li>
-                                <li><a href="#">Find Past Papers</a></li>
-                                <li><a href="#">Ask Questions</a></li>
+                                <li><a href="/pastpapers">Find Past Papers</a></li>
+                                <li><a href="/questionbank">Ask Questions</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-3 item">
@@ -148,7 +151,7 @@
                             <h3>HEXAGON DEVELOPERS</h3>
                             <p>Before software can be reusable it first has to be usable</p>
                         </div>
-                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                        <div class="col item social"><a href="https://www.facebook.com/sltutor.academi.7"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                     </div>
                     <p class="copyright">Company Name © 2017</p>
                 </div>
@@ -167,6 +170,20 @@
         <script>
             CKEDITOR.replace( 'article-ckeditor' );
         </script>
+
+    <!--js for pre loader-->
+    <script>
+    $(document).ready(function() {
+    //Preloader
+    preloaderFadeOutTime = 500;
+    function hidePreloader() {
+    var preloader = $('.spinner-wrapper');
+    preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    });
+    </script>
+
 
 
         </div>

@@ -120,37 +120,36 @@
                     **-->
 
 
-        <div id="footer" class="footer-dark" >
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Services</h3>
-                            <ul>
-                                <li><a href="/posts">Find Teachers</a></li>
-                                <li><a href="#">Find Past Papers</a></li>
-                                <li><a href="#">Ask Questions</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>About</h3>
-                            <ul>
-                                <li><a href="#">Company</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Careers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 item text">
-                            <h3>HEXAGON DEVELOPERS</h3>
-                            <p>Before software can be reusable it first has to be usable</p>
-                        </div>
-                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <div id="footer" class="footer-dark" >
+                        <footer>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-3 item">
+                                        <h3>Services</h3>
+                                        <ul>
+                                            <li><a href="/posts">Find Teachers</a></li>
+                                            <li><a href="/pastpapers">Find Past Papers</a></li>
+                                            <li><a href="/questionbank">Ask Questions</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 item">
+                                        <h3>About</h3>
+                                        <ul>
+                                            <li><a href="#">Company</a></li>
+                                            <li><a href="#">Team</a></li>
+                                            <li><a href="#">Careers</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 item text">
+                                        <h3>HEXAGON DEVELOPERS</h3>
+                                        <p>Before software can be reusable it first has to be usable</p>
+                                    </div>
+                                    <div class="col item social"><a href="https://www.facebook.com/sltutor.academi.7"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                                </div>
+                                <p class="copyright">Company Name © 2017</p>
+                            </div>
+                        </footer>
                     </div>
-                    <p class="copyright">Company Name © 2017</p>
-                </div>
-            </footer>
-        </div>
-
         <script src="/storage/assets/js/jquery.min.js"></script>
         <script src="/storage/assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="/storage/assets/js/bs-init.js"></script>

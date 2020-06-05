@@ -5,6 +5,10 @@
 
 <hr>
 
+  <!--For display error message or success messages-->
+
+  @include('inc.messages');
+
 <div class="contact-clean" style="padding: 20px">
    
     {!! Form::open(['action' => 'QuestionBankController@store', 'method' => 'POST','enctype' => 'multipart/form-data']) !!}

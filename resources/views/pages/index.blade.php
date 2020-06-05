@@ -122,8 +122,8 @@
                         <h3>Services</h3>
                         <ul>
                             <li><a href="/posts">Find Teachers</a></li>
-                            <li><a href="#">Find Past Papers</a></li>
-                            <li><a href="#">Ask Questions</a></li>
+                            <li><a href="/pastpapers">Find Past Papers</a></li>
+                            <li><a href="/questionbank">Ask Questions</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
