@@ -49,6 +49,12 @@
 </head>
 
 <body>
+        <!--CSS Spinner Pre Loader-->
+        <div class="spinner-wrapper">
+            <div class="spinner"></div>
+        </div>
+
+        
     <div>
         <div class="header-blue">
             <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
@@ -151,6 +157,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="storage/assets/js/Profile-Edit-Form.js"></script>
     <script src="storage/assets/js/Simple-Slider.js"></script>
+
+        <!--js for pre loader-->
+        <script>
+            $(document).ready(function() {
+            //Preloader
+            preloaderFadeOutTime = 500;
+            function hidePreloader() {
+            var preloader = $('.spinner-wrapper');
+            preloader.fadeOut(preloaderFadeOutTime);
+            }
+            hidePreloader();
+            });
+            </script>
+            
 </body>
 
 </html>
