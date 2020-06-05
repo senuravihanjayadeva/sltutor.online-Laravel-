@@ -135,9 +135,9 @@
                                     <div class="col-sm-6 col-md-3 item">
                                         <h3>About</h3>
                                         <ul>
-                                            <li><a href="#">Company</a></li>
-                                            <li><a href="#">Team</a></li>
-                                            <li><a href="#">Careers</a></li>
+                                            <li><a href="/about">Company</a></li>
+                                            <li><a href="/about">Team</a></li>
+                                            <li><a href="/about">Careers</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 item text">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="col item social"><a href="https://www.facebook.com/sltutor.academi.7"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                                 </div>
-                                <p class="copyright">Company Name © 2017</p>
+                                <a href="#" style="color: blanchedalmond " ><p class="copyright">HEXAGON SOLUTIONS © 2020</p></a>
                             </div>
                         </footer>
                     </div>

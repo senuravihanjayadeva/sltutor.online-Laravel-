@@ -55,6 +55,12 @@
                             <label class="form-check-label" for="formCheck-4">Past Papers</label>
                         </div>
                     </div>
+                    <div class="col-md-3" style="padding: 5px;">
+                        <div class="form-check">
+                            <input name="option" class="form-check-input" type="radio" id="formCheck-4" onclick = "checkfunc(4)">
+                            <label class="form-check-label" for="formCheck-4">Comments</label>
+                        </div>
+                    </div>
                 </div>
 
                 <!--For display error message or success messages-->
@@ -188,6 +194,45 @@
 
                         <!--End of Question Bank table-->
 
+                        <!-- Comments table-->
+                        <div id="tableComments" class="table-responsive" style="display: none">
+                        
+                             <h3>Comments</h3>
+                             <table class="table">
+                                 <thead>
+                                     <tr>
+                                         <th>ID</th>
+                                         <th>Comment By</th>
+                                         <th>Commented Question</th>
+                                         <th>Comment</th>
+                                         <th>Delete</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     @foreach($data['comments']  as $comment)
+                                     <tr>
+                                         <td>{{$comment->id}}</td>
+                                         <td>{{$comment->commenter_id}}</td>
+                                         <td>{{$comment->commentable_type}} {{$comment->commentable_id}}</td>
+                                         <td>{!!$comment->comment!!}</td>
+                                         <td>     
+                                            {!!Form::open(['action' => ['AdminCommentController@destroy',$comment->id], 'method' => 'POST' ]) !!}
+
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Remove',['class' => 'btn btn-danger btn-sm'])}}
+                                        
+                                            {!!Form::close() !!}
+                                         </td>
+                                        
+                                     </tr>
+                                 @endforeach
+                                 </tbody>
+                             </table>
+                         </div>
+ 
+                         <!--End of Comments table -->
+
+
                         <!-- Past papers table-->
                         <div id="tablePastpapers" class="table-responsive" style="display: none">
                            <a class="nav-link" href="/pastpapers/create"><button class="btn btn-success btn-sm"> Create a PastPaper</button></a>
@@ -255,6 +300,7 @@
             document.getElementById("tableAdvertisement").style.display = 'none';
             document.getElementById("tableQuestionBank").style.display = 'none';
             document.getElementById("tablePastpapers").style.display = 'none';
+            document.getElementById("tableComments").style.display = 'none';
         }
         if (x == 1)
         {
@@ -262,6 +308,7 @@
             document.getElementById("tableAdvertisement").style.display = 'block';
             document.getElementById("tableQuestionBank").style.display = 'none';
             document.getElementById("tablePastpapers").style.display = 'none';
+            document.getElementById("tableComments").style.display = 'none';
         }
         if (x == 2)
         {
@@ -269,6 +316,7 @@
             document.getElementById("tableAdvertisement").style.display = 'none';
             document.getElementById("tableQuestionBank").style.display = 'block';
             document.getElementById("tablePastpapers").style.display = 'none';
+            document.getElementById("tableComments").style.display = 'none';
         }
         if (x == 3)
         {
@@ -276,6 +324,14 @@
             document.getElementById("tableAdvertisement").style.display = 'none';
             document.getElementById("tableQuestionBank").style.display = 'none';
             document.getElementById("tablePastpapers").style.display = 'block';
+        }
+        if (x == 4)
+        {
+            document.getElementById("tableUsers").style.display = 'none';
+            document.getElementById("tableAdvertisement").style.display = 'none';
+            document.getElementById("tableQuestionBank").style.display = 'none';
+            document.getElementById("tablePastpapers").style.display = 'none';
+            document.getElementById("tableComments").style.display = 'block';
         }
     }
     

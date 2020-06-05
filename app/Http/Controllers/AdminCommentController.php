@@ -2,31 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Laravelista\Comments\Comment; //Comment Class
+use Illuminate\Support\Facades\Auth; //FOR Auth Class
 use Illuminate\Http\Request;
 
-use Laravelista\Comments\Comment; //Comment Class
-use App\User;
-use App\Post;
-use App\QuestionBank;
-use App\Admin;
-use App\PastPaper;
 use DB;
-use Illuminate\Support\Facades\Auth; //FOR Auth Class
 
-
-
-class AdminController extends Controller
+class AdminCommentController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -34,27 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //check for admin
-        if (!(Auth::guard('admin')->user())) {
-
-            return redirect('/login')->with('error', 'Unauthorized Page');
-        }
-
-        $users = User::all();
-        $advertisements = Post::all();
-        $questionBanks = QuestionBank::all();
-        $pastpapers = PastPaper::all();
-        $comments =  Comment::all();
-
-        $data = array(
-            'users' => $users->sortByDesc('id'),
-            'advertisements' => $advertisements->sortByDesc('id'),
-            'questionBanks' => $questionBanks->sortByDesc('id'),
-            'pastpapers' => $pastpapers->sortByDesc('id'),
-            'comments' =>  $comments->sortByDesc('id'),
-        );
-
-        return view('admin', compact('data'));
+        //
     }
 
     /**
@@ -120,6 +83,16 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //check for admin
+        if (!(Auth::guard('admin')->user())) {
+
+            return redirect('/login')->with('error', 'Unauthorized Page');
+        }
+
+        DB::table('comments')
+            ->where('id', $id)
+            ->delete();
+
+        return redirect('/admin')->with('success', 'Comment Deleted');
     }
 }

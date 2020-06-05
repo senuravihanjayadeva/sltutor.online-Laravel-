@@ -113,7 +113,7 @@
            
             ඔබේ ප්‍රශ්නයට පිළිතුරු දීමට යමෙකුට අවශ්‍ය සියලු තොරතුරු ඇතුළත් කරන්න Include all the information someone would need to answer your question<br>
         
-           <span style="font-size: 14px; color:red">Image upload කිරීමට  <i class="fas fa-image" style="font-size: 20px;"></i> icon එක මත click කර ඉන්පසු <span style="font-weight: bold">upload</span> button එක click කර image එකක් තෝරා ගැනීමට <span style="font-weight: bold">choose file </span> click කර image එකක් තෝරා  ගත් පසු <span style="font-weight: bold">send it to the server</span> button එක click කර  ok කරන්න .ඉන්පසු ඔබට අවශ්‍ය ලෙස width, height සකසා ගෙන ok කරන්න </span>
+           <span style="font-size: 14px; color:red; font-weight: bold">Image upload කිරීමට  <i class="fas fa-image" style="font-size: 20px;"></i> icon -> upload -> choose file -> send it to the server ->  ok </span>
            </label>
 
            <div class="form-group">

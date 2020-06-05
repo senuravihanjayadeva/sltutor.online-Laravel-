@@ -10,7 +10,7 @@
                     <div class="carousel-item">
                         <div class="jumbotron pulse animated hero-nature carousel-hero">
                             <h1 class="hero-title">SLTUTOR</h1>
-                            <p class="hero-subtitle">Education is the passport to the future, for tomorrow belongs to those who prepare for it today</p>
+                            <p class="hero-subtitle">Education is the passport to the future</p>
                             <p><a class="btn btn-primary hero-button plat" role="button" href="/questionbank">Learn more</a></p>
                         </div>
                     </div>
