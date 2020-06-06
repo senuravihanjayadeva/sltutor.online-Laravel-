@@ -106,7 +106,9 @@ class LiveSearch extends Controller
 
         $posts =  Post::where('subject', 'LIKE', '%' . $q . '%')->orWhere('district', 'LIKE', '%' . $q . '%')->orWhere('town', 'LIKE', '%' . $q . '%')->orWhere('level', 'LIKE', '%' . $q . '%')->orWhere('tutiontype', 'LIKE', '%' . $q . '%')->orWhere('medium', 'LIKE', '%' . $q . '%')
             ->orWhere('price', 'LIKE', '%' . $q . '%')
-            ->orWhere('fullName', 'LIKE', '%' . $q . '%')->paginate(20);
+            ->orWhere('fullName', 'LIKE', '%' . $q . '%')->orderBy('id', 'desc')->paginate(50);
+
+        $postCount =  Post::all();
 
         $limit = 10;
         $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
@@ -118,6 +120,7 @@ class LiveSearch extends Controller
             'posts' =>  $posts,
             'questions' => $questions,
             'comments' => $comments,
+            'postCount' => $postCount,
         );
 
 

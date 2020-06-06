@@ -31,7 +31,8 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts =  Post::orderBy('id', 'desc')->paginate(20); //add pagination
+        $posts =  Post::orderBy('id', 'desc')->paginate(50); //add pagination
+        $postCount =  Post::all();
 
         $limit = 10;
         $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
@@ -43,6 +44,8 @@ class PostsController extends Controller
             'posts' =>  $posts,
             'questions' => $questions,
             'comments' => $comments,
+            'postCount' => $postCount,
+
         );
 
 

@@ -45,14 +45,24 @@
                     <div class="col-md-8 offset-md-1 text-left" style="margin: 5px 0px 0px 10px;padding: 0px;">
                         <div class="card text-left d-xl-flex justify-content-xl-start m-auto" style="max-width: 850px;margin: 0px;">
                             <div class="card-body" style="font-size: 10px;padding: 0px;margin: 5px;">
-                                
+
+                               
                                 <form action="/searchposts" method="POST" role="search" class="d-flex align-items-center" style="font-size: 10px;">
                                     {{ csrf_field() }}
+
+                                   
+                                
                                     <i class="fas fa-search shadow-sm d-none d-sm-block h4 text-body m-0" style="font-size: 20px;"></i>
-                                    <input class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search topics or keywords" name="search" style="font-size: 15px;">
+                                    <input  id="tags" class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search"
+                                     placeholder="Search topics or keywords" name="search" style="font-size: 15px;">
+
+                                  
+                                   
                                     <button class="btn btn-success btn-lg" type="submit" style="font-size: 15px;">Search</button>
 
                                 </form>
+
+                           
                             </div>
                         </div>
                     </div>
@@ -179,12 +189,12 @@
                                     <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
        
                                         <!-- Number of ALL teacher-->
-                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{count($data['posts'])}} Teachers</h6>
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{count($data['postCount'])}} Teachers</h6>
                                          <!-- Number of ALL teacher-->
 
                                         <!-- Number of AL teacher-->
                                         <?php $countALTeachers = 0 ?>
-                                        @foreach($data['posts'] as $AdvencedLevelTeachers)
+                                        @foreach($data['postCount'] as $AdvencedLevelTeachers)
 
                                             @if($AdvencedLevelTeachers->level == 'Advanced Level' )
 
@@ -201,7 +211,7 @@
 
                                        <!-- Number of AL teacher-->
                                        <?php $countOLTeachers = 0 ?>
-                                       @foreach($data['posts'] as $OrdinaryLevelTeachers)
+                                       @foreach($data['postCount'] as $OrdinaryLevelTeachers)
                 
                                             @if($OrdinaryLevelTeachers->level == 'Ordinary Level' )
                                                 <?php  $countOLTeachers = $countOLTeachers + 1; ?>
@@ -297,6 +307,7 @@
                 </div>
             </div>
         </div>
+
 
 
 @endsection
