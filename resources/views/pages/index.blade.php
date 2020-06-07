@@ -66,7 +66,7 @@
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/posts">Find Teachers</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/posts/create">Promote Your Tuition</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/questionbank">Question Bank</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="/pastpapers">PastPapers</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/pastpapers">Past Papers</a></li>
                             <!--
                             <li class="nav-item" role="presentation"><a class="nav-link" href="#">Notes</a></li>
                             -->

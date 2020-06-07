@@ -8,7 +8,7 @@
             <h2 class="text-center">SLTUTOR</h2>
             <p class="text-center"><br><br>It is important to know that when you tutor a child, you are preparing him or her for the life ahead of them. Everything you teach them is critical to the person they become.<br><br></p>
         </div>
-        <div class="buttons"><a class="btn btn-info active" role="button" href="https://www.facebook.com/SLtutorcom-424551631428759" target="_blank"><i class="fa fa-facebook-square" style="font-size: 16px;"></i>&nbsp;Connect with facebook</a></div>
+        <div class="buttons"><a class="btn btn-info active" role="button" href="https://www.facebook.com/SLtutorcom-424551631428759" target="_blank">Connect with facebook</a></div>
     </div>
 </div>
 <hr class="d-xl-flex align-self-center mx-auto" style="height: 1px;background-color: #4a4747;width: 75%;">
@@ -33,14 +33,14 @@
         <div class="col-md-6">
             <div class="card border-white">
                 <div class="card-body">
-                <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->created_at}}<br></p>
+                <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->created_at}} |  <i class="far fa-eye"></i> {{$post->viewCount}}<br></p>
                     <h4 class="card-title" style="color: rgb(39,39,39);padding: 0px;">{{$post->subject}}</h4>
                     <h4 class="card-title" style="color: rgb(39,39,39);padding: 0px;">{{$post->fullName}}<br></h4>
                     <h6 class="text-muted card-subtitle mb-2" style="font-family: ABeeZee, sans-serif;">{{$post->medium}}<br></h6>
                     <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->tutiontype}}<br></p>
                     <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->district}} -&gt;&nbsp;{{$post->town}}<br></p>
-                <p class="card-text" style="font-family: Aclonica, sans-serif;color: rgb(49,50,50);font-size: 20px;margin: 5px 0px;">Rs.{{$post->price}}<br></p>
-                <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;"><br>{!! $post->description !!}<br><br></p>
+                <p class="card-text" style="font-family: Aclonica, sans-serif;color: rgb(49,50,50);font-size: 20px;margin: 5px 0px;">Rs.{{$post->price}}</p>
+                <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{!! $post->description !!}</p>
 
                 <!--**********************************-->
 

@@ -146,6 +146,9 @@ class PostsController extends Controller
     public function show($id)
     {
 
+        $count = Post::find($id);
+        $count->viewCount = $count->viewCount + 1;
+        $count->save();
 
         $post = DB::select("select * from posts where id = '$id' ");
 
