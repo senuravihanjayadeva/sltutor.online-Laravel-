@@ -57,9 +57,9 @@ return [
      * Visitors will be asked to provide their name and email
      * address in order to post a comment.
      */
-    'guest_commenting' => false,
+    'guest_commenting' => true,
 
-	/**
+    /**
      * Set this option to `true` to enable soft deleting of comments.
      *
      * Comments will be soft deleted using laravels "softDeletes" trait.

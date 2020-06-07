@@ -52,6 +52,10 @@
         <link rel="stylesheet" href="/storage/assets/css/Profile-Edit-Form-1.css">
         <link rel="stylesheet" href="/storage/assets/css/Profile-Edit-Form.css">
 
+        <!-- Place your Fontawesome kit's code here -->
+       <script src="https://kit.fontawesome.com/68eb695a6c.js" crossorigin="anonymous"></script>
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
         <title>{{config('app.name','SLTUTOR')}}</title>
@@ -99,7 +103,7 @@
                     @guest
                     <a class="login" href="{{ route('login') }}">Log In</a>
                     @if (Route::has('register'))
-                    <a class="btn btn-light action-button" role="button" href="{{ route('register') }}">Sign Up</a>
+                    <a class="btn btn-light action-button" role="button" href="{{ route('register') }}">Create an Account</a>
                     @endif
                     @else
                     <a class="login" href="/home"> {{ Auth::user()->name }} </a>

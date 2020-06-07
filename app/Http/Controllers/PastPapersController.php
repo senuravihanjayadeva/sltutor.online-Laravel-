@@ -125,7 +125,25 @@ class PastPapersController extends Controller
      */
     public function show($id)
     {
-        //
+
+
+        $count = PastPaper::find($id);
+        $count->viewCount = $count->viewCount + 1;
+        $count->save();
+
+
+        $paper = DB::select("select * from past_papers where id = '$id' ");
+
+        $papers = PastPaper::all()->take(4); //limit 4 posts 
+
+        $data = array(
+
+            'papers' => $papers->sortByDesc('id'),
+            'paper' => $paper,
+        );
+
+
+        return view('PastPapers.show', compact('data'));
     }
 
     /**

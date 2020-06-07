@@ -170,7 +170,7 @@
                                 @if(count($data['PastPapers']) > 0)
 
                                 @foreach($data['PastPapers'] as $PastPaper)
-                                <a href="{{$PastPaper->link}}" target="_blank">
+                                <a href="/pastpapers/{{$PastPaper->id}}">
                                 <div class="col-md-4 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
                                     <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
 
@@ -188,7 +188,7 @@
 
                                         <div class="card-body text-center" style="padding: 10px;">
 
-                                            <a class="card-link status" href="{{$PastPaper->link}}" target="_blank">
+                                            <a class="card-link status" href="/pastpapers/{{$PastPaper->id}}">
                                                 <div class="overlay"></div>
                                             </a>
 
@@ -201,10 +201,10 @@
                                             <hr>
 
                                             
-                                            <a id="viewButton"  href="{{$PastPaper->link}}" target="_blank"><button class="btn btn-info btn-sm" data-bs-hover-animate="pulse" type="button">Download</button></a>
+                                            <a id="viewButton"  href="/pastpapers/{{$PastPaper->id}}" ><button class="btn btn-info btn-sm" data-bs-hover-animate="pulse" type="button">View</button></a>
                                           
 
-                                            <h6 id="viewTimeago" class="text-muted card-subtitle mb-2" style="font-size: 10px;margin: 2px 0px 2px 0px;">{{$PastPaper->created_at->diffForHumans()}}</h6>
+                                            <h6 id="viewTimeago" class="text-muted card-subtitle mb-2" style="font-size: 10px;margin: 2px 0px 2px 0px;">{{$PastPaper->created_at->diffForHumans()}} |  <i class="far fa-eye"></i> {{$PastPaper->viewCount}}</h6>
 
                                        
 
