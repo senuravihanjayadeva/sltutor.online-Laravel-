@@ -134,12 +134,20 @@ class PastPapersController extends Controller
 
         $paper = DB::select("select * from past_papers where id = '$id' ");
 
-        $papers = PastPaper::all()->take(4); //limit 4 posts 
+        $papers = PastPaper::all()->sortByDesc('id')->take(4); //limit 4 posts 
+
+        $limit = 10;
+        $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
+
+        $comments = DB::select("select * from comments");
+
 
         $data = array(
 
-            'papers' => $papers->sortByDesc('id'),
+            'papers' => $papers,
             'paper' => $paper,
+            'questions' => $questions,
+            'comments' => $comments,
         );
 
 

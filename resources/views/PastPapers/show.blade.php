@@ -15,6 +15,53 @@
 
 <a class="btn btn-default d-flex d-xl-flex justify-content-center justify-content-xl-center" href="/pastpapers" style="margin:5px; padding: 10px; border:none; ouline:none;">Go Back</a>
 
+<div class="row justify-content-center">
+
+<div class="col-sm-12 col-md-2">
+    <section>
+
+
+        <div class="row">
+
+
+            <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
+                <div class="card text-center">
+                    <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
+                       
+   
+        
+                        <span  style="font-size:13px" class="d-xl-flex justify-content-xl-start ">Recent Past Papers</span>
+                        
+
+                       
+                        <div class="float-left float-md-right mt-5 mt-md-0 search-area"></div>
+                        @foreach($data['papers'] as $papers)
+                        <hr>
+                        <a href="/pastpapers/{{$papers->id}}">
+                        <h6 class="text-muted" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif; text-align:left;" >{{$papers->school}} {{$papers->subject}}</h6>
+
+                        <h6 class="text-muted " style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif; text-align:left;"> {{$papers->year}} {{$papers->grade}} {{$papers->term}} Test Paper <i class="far fa-eye"></i> {{$papers->viewCount}} </h6>
+    
+
+                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> {{$papers->created_at}}  </h6>
+
+                        </a>
+                       
+                        @endforeach
+                 
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+</div>
+
+<div class="col-sm-12 col-md-6">
+
 <section>
     <div class="row justify-content-center">
 
@@ -24,13 +71,19 @@
             
       
 
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-12">
             <center>
             <img class="img-fluid d-flex d-md-flex pulse animated" src="/storage/cover_images/{{$post->cover_image}}" >
             </center>
         </div>
         
-        <div class="col-md-6">
+        <div class="row">
+
+        <div class="col-md-1">
+            <!--Empty-->
+        </div>
+
+        <div class="col-md-12">
             <div class="card border-white">
                 <div class="card-body">
                 <p class="card-text" style="font-family: ABeeZee, sans-serif;color: rgb(136,137,137);margin: 5px 0px;">{{$post->created_at}} |  <i class="far fa-eye"></i> {{$post->viewCount}} <br></p>
@@ -52,6 +105,12 @@
             </div>
         </div>
 
+        <div class="col-md-1">
+         <!--Empty-->
+        </div>
+
+        </div>
+
         @endforeach
 
 
@@ -61,8 +120,77 @@
     </div>
 </section>
 
+</div>
+
+<div class="col-sm-12 col-md-2">
+
+    <section>
 
 
+        <div class="row">
 
+
+            <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
+                <div class="card text-center">
+                    <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
+                       
+                           
+                      
+                                
+                        <a href="/questionbank/create" class="btn btn-info btn-sm">Ask Questions</a>
+                        
+                      <hr>
+                  
+                        <h5 class="d-xl-flex justify-content-xl-start card-title" style="font-family: Baloo, cursive;">
+                            Question Bank  <br>
+                        
+                        </h5> 
+                        <span  style="font-size:13px" class="d-xl-flex justify-content-xl-start ">Recent questions</span>
+                        
+
+                       
+                        <div class="float-left float-md-right mt-5 mt-md-0 search-area"></div>
+                        @foreach($data['questions'] as $question)
+                        <hr>
+                        <a href="/questionbank/{{$question->id}}">
+                        <h6 class="text-muted" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;  text-align:left;">{{$question->subject}}</h6>
+
+                        <h6 class="text-muted" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;  text-align:left;">{{$question->title}}  </h6>
+
+                        <!-- Count no of comments for each Question-->
+                        <?php $countComments = 0 ?>
+                        @foreach($data['comments'] as $comments)
+
+                        @if( $comments->commentable_id ==  $question->id)
+       
+                        <?php $countComments = $countComments + 1 ?> 
+        
+                        @endif
+
+                        @endforeach
+
+                        <h6 class="text-muted " style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;  text-align:left;"><?php echo $countComments; ?>  answers |    <i class="far fa-eye"></i>  {{$question->viewCount}}</h6>
+                        <!-- End of Count no of comments for each Question-->
+
+                        <h6 class="text-muted " style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;  text-align:left;"> {{$question->created_at}}  </h6>
+
+                        </a>
+                       
+                        @endforeach
+                 
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+</div>
 
 @endsection

@@ -159,17 +159,22 @@
       
                           <div class="col text-center">
 
-                            @foreach($data['comments'] as $comments)
-
                       
-                            @if( $comments->commentable_id ==  $userquestions->id)
-                     
-                                <h1 style="font-size: 15px;">{{$comments->count}}</h1>
-    
-                          @endif
-    
+                             <!-- Count no of comments for each Question-->
+                            <?php $countComments = 0 ?>
+                             @foreach($data['comments'] as $comments)
 
-                          @endforeach
+                             @if( $comments->commentable_id ==  $userquestions->id)
+                       
+                            <?php $countComments = $countComments + 1 ?> 
+                        
+                            @endif
+
+                            @endforeach
+
+                            <h1 id="commentCount" style="font-size: 15px;"><?php echo $countComments; ?> </h1>
+
+                     
 
                             <p style="font-size: 12px;">answers</p>
                           </div>
