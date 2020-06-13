@@ -256,6 +256,119 @@
                     <div class="col-auto col-md-4 pulse animated">
 
 
+                        <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
+                            <div class="card text-center">
+                                <div class="card-body text-center" style="margin: 0px 10px;padding: 20px;">
+                                   
+                                       
+                        
+                                        <!-- Number of ALL Papers-->
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">{{count($data['PastPapersCount'])}} Papers</h6>
+                                         <!-- Number of ALL Papers-->
+
+                                        <!-- Number of AL Papers-->
+                                        <?php $countALPapers = 0 ?>
+                                        @foreach($data['PastPapersCount'] as $AdvencedLevelPapers)
+
+                                            @if($AdvencedLevelPapers->level == 'Advanced Level' )
+
+                                            <?php  $countALPapers = $countALPapers + 1; ?>
+
+                                            @endif
+
+                                        @endforeach
+
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> 
+                                        <?php echo $countALPapers ?> Advanced Level Papers
+                                        </h6>
+                                       <!--End of  Number of AL Papers-->
+
+                                       <!-- Number of AL Papers-->
+                                       <?php $countOLPapers = 0 ?>
+                                       @foreach($data['PastPapersCount'] as $OrdinaryLevelPapers)
+                
+                                            @if($OrdinaryLevelPapers->level == 'Ordinary Level' )
+                                                <?php  $countOLPapers = $countOLPapers + 1; ?>
+                                            @endif
+
+                                        @endforeach
+                
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">
+                                        
+                                            <?php echo $countOLPapers ?> Ordinary Level Papers 
+                                        </h6>
+                                        <!--End of  Number of AL Papers-->
+                             
+                                         <!-- Number of Combined Maths Papers-->
+                                       <?php $countCombinedMathsPapers = 0 ?>
+                                       @foreach($data['PastPapersCount'] as $CombinedMaths)
+                
+                                            @if($CombinedMaths->subject == 'Combined Maths' )
+                                                <?php  $countCombinedMathsPapers = $countCombinedMathsPapers + 1; ?>
+                                            @endif
+
+                                        @endforeach
+                
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">
+                                        
+                                            <?php echo $countCombinedMathsPapers ?> Combined Maths
+                                        </h6>
+                                        <!--End of  Number of  Combined Maths Papers-->
+
+                                        <!-- Number of Biology Papers-->
+                                       <?php $countBiologyPapers = 0 ?>
+                                       @foreach($data['PastPapersCount'] as $Biology)
+                
+                                            @if($Biology->subject == 'Biology' )
+                                                <?php  $countBiologyPapers = $countBiologyPapers + 1; ?>
+                                            @endif
+
+                                        @endforeach
+                
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">
+                                        
+                                            <?php echo $countBiologyPapers ?> Biology
+                                        </h6>
+                                        <!--End of  Number of Biology Papers-->
+
+                                        <!-- Number of Physics Papers-->
+                                       <?php $countPhysicsPapers = 0 ?>
+                                       @foreach($data['PastPapersCount'] as $Physics)
+                
+                                            @if($Physics->subject == 'Physics' )
+                                                <?php  $countPhysicsPapers = $countPhysicsPapers + 1; ?>
+                                            @endif
+
+                                        @endforeach
+                
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">
+                                        
+                                            <?php echo $countPhysicsPapers ?> Physics
+                                        </h6>
+                                        <!--End of  Number of Physics Papers-->
+
+                                        <!-- Number of Chemistry Papers-->
+                                       <?php $countChemistryPapers = 0 ?>
+                                       @foreach($data['PastPapersCount'] as $Chemistry)
+                
+                                            @if($Chemistry->subject == 'Chemistry' )
+                                                <?php  $countChemistryPapers = $countChemistryPapers + 1; ?>
+                                            @endif
+
+                                        @endforeach
+                
+                                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;">
+                                        
+                                            <?php echo $countChemistryPapers ?> Chemistry
+                                        </h6>
+                                        <!--End of  Number of Chemistry Papers-->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
 
                         <div class="col-md-12" style="margin: 5px 0px;padding: 0px;">
                             <div class="card text-center">

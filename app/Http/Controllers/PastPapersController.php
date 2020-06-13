@@ -26,6 +26,7 @@ class PastPapersController extends Controller
     {
 
         $PastPapers = PastPaper::all();
+        $PastPapersCount =  PastPaper::all();
         $limit = 10;
         $questions =  DB::select("select *  from question_banks order by id desc limit $limit");
         $comments = DB::select("select * from comments");
@@ -35,6 +36,7 @@ class PastPapersController extends Controller
             'PastPapers' =>  $PastPapers->sortByDesc('id'),
             'questions' => $questions,
             'comments' => $comments,
+            'PastPapersCount' => $PastPapersCount,
         );
 
 

@@ -43,7 +43,7 @@
                         <h6 class="text-muted " style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif; text-align:left;"> {{$papers->year}} {{$papers->grade}} {{$papers->term}} Test Paper <i class="far fa-eye"></i> {{$papers->viewCount}} </h6>
     
 
-                        <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> {{$papers->created_at}}  </h6>
+                        <h6 class="text-muted" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif; text-align:left;"> {{$papers->created_at}}  </h6>
 
                         </a>
                        
