@@ -78,6 +78,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Profile Image</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Delete</th>
@@ -88,6 +89,17 @@
                                 @foreach($data['users']  as $user)
                                     <tr>
                                         <td>{{$user->id}}</td>
+                                        <td>
+                                            @if($user->ProfileImage)
+
+                                            <img width="50" height="50" src="/storage/ProfileImage/{{$user->ProfileImage}}">
+                                            
+                                            @else
+
+                                                <img class="rounded-circle img-fluid border d-flex mx-auto" data-bs-hover-animate="pulse" src="/storage/ProfileImage/noimage.jpg" width="150px" height="150px">
+
+                                            @endif
+                                        </td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                 
