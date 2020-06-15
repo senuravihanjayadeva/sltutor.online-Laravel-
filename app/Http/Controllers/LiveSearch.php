@@ -87,12 +87,14 @@ class LiveSearch extends Controller
 
         $comments = DB::select("select * from comments");
 
+        $PastPapersCount =  PastPaper::all();
 
         $data = array(
 
             'PastPapers' =>  $PastPapers->sortByDesc('id'),
             'questions' => $questions,
             'comments' => $comments,
+            'PastPapersCount' => $PastPapersCount,
         );
 
 
