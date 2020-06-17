@@ -20,7 +20,7 @@ class LiveSearch extends Controller
     {
 
         $q = $request->input('search');
-        $comments = DB::select("select commentable_id,count(*) as count  from comments group by commentable_id");
+        $comments = DB::select("select * from comments");
 
         $questions = QuestionBank::where('title', 'LIKE', '%' . $q . '%')->orWhere('subject', 'LIKE', '%' . $q . '%')->get();
 
