@@ -171,7 +171,7 @@
 
                                 @foreach($data['PastPapers'] as $PastPaper)
                                 <a href="/pastpapers/{{$PastPaper->id}}">
-                                <div class="col-lg-4 col-md-6  text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
+                                <div class="col-lg-4 col-md-6 col-sm-6 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
                                     <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
 
 
