@@ -171,7 +171,7 @@
 
                                 @foreach($data['PastPapers'] as $PastPaper)
                                 <a href="/pastpapers/{{$PastPaper->id}}">
-                                <div class="col-md-4 text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
+                                <div class="col-lg-4 col-md-6  text-justify d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 5px;">
                                     <div  id="teacherPostDiv" class="card" style="overflow: hidden;">
 
 
@@ -406,7 +406,7 @@
 
                                     @endforeach
 
-                                    <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"><?php echo $countComments; ?>  answers |     <i class="fas fa-eye shadow-sm  d-sm-block h4 text-body m-0" style="padding:2px;font-size: 15px; background-color:none"></i> {{$question->viewCount}}</h6>
+                                    <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"><?php echo $countComments; ?>  answers |&nbsp<i class="far fa-eye"></i>&nbsp{{$question->viewCount}}</h6>
                                     <!-- End of Count no of comments for each Question-->
 
                                     <h6 class="text-muted d-xl-flex justify-content-xl-start card-subtitle mb-2" style="padding: 2px 2px 0px 2px;font-family: ABeeZee, sans-serif;"> {{$question->created_at}}  </h6>
