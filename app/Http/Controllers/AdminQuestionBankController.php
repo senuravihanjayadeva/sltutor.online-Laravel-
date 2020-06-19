@@ -101,10 +101,10 @@ class AdminQuestionBankController extends Controller
         $question->body = $request->input('body');
         $question->user_id = $request->input('user_id');
         $question->name = $request->input('name');
-        $question->ProfileImage =  $request->input('ProfileImage');;
+        $question->ProfileImage =  $request->input('ProfileImage');
         $question->save();
 
-        return redirect('admin')->with('success', 'Question Updated');
+        return redirect('/admin')->with('success', 'Question Updated');
     }
 
     /**

@@ -179,7 +179,7 @@ class QuestionBankController extends Controller
         $question->ProfileImage = auth()->user()->ProfileImage;
         $question->save();
 
-        return redirect('/questionbank/' . $id)->with('success', 'Question Updated');
+        return redirect('questionbank/' . $id)->with('success', 'Question Updated');
     }
 
     /**

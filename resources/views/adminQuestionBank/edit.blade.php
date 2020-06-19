@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.adminapp')
 
 @section('content')
 
@@ -9,9 +9,9 @@
    
     {!! Form::open(['action' => ['AdminQuestionBankController@update',$question->id], 'method' => 'POST','enctype' => 'multipart/form-data']) !!}
 
-        <h2 class="text-center"><br>Edit Your Question<br><br></h2>
+        <h2 class="text-center"><br>Edit  Question<br><br></h2>
 
-        {{ Form::hidden('ProfileImage',$question->ProfileImage,['class' => 'form-control','readonly']) }}
+        {{ Form::text('ProfileImage',$question->ProfileImage,['class' => 'form-control','readonly']) }}
 
         <div class="form-group">
                        
@@ -96,17 +96,7 @@
 
         <div class="form-group">
             
-              
-            @if( $question->level == 'Advanced Level' )
-
             
-            <div class="col-md-6" id="olsubblock" style="display: none" >
-
-            @else
-
-            <div class="col-md-6" id="olsubblock" style="display: block" >
-
-            @endif
 
             <strong> 
                 {{ Form::label('subject','Subject') }}
@@ -126,27 +116,6 @@
                 'Art' => 'Art', 
                 'Dancing' => 'Dancing', 
                 'Health & Physical Education' => 'Health & Physical Education',
-                
-                ], $question->subject,['id' => 'olsub','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
-            
-            </div>
-
-            @if( $question->level == 'Advanced Level' )
-
-            <div class="col-md-6" id="alsubblock" style="display: block" >
-
-            @else
-
-            <div class="col-md-6" id="alsubblock" style="display: none" >
-
-            @endif
-
-                <strong> 
-                    {{ Form::label('subject','Subject') }}
-                </strong>   
-
-                {{ Form::select('subject', [
-
                     'Combined Maths' => 'Combined Maths', 
                     'Biology' => 'Biology', 
                     'Physics' => 'Physics', 
@@ -166,11 +135,10 @@
                     'General English' => 'General English',
                     'Logic' => 'Logic',
                     
-                    ], $question->subject,['id' => 'alsub','disabled'=>'true','class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
+                    ], $question->subject,['class' => 'form-control' , 'placeholder' => 'Pick a subject...']) }}
                 
-                </div>
-        
-        </div>
+                
+    
 
 
 
@@ -214,25 +182,7 @@
 </div>
 
 
-<script>
-    //java scipt for show and hide alsubject list and olsubject list
-    function checkfunc(x)
-    {
-        if( x == 0)
-        {
-            document.getElementById("alsubblock").style.display = 'block';
-            document.getElementById("olsubblock").style.display = 'none';
-            document.getElementById("alsub").disabled= false;
-        }
-        if (x == 1)
-        {
-            document.getElementById("alsubblock").style.display = 'none';
-            document.getElementById("olsubblock").style.display = 'block';
-            document.getElementById("alsub").disabled= true;
-        }
-    }
-    
-    </script>
+
     
 
 @endsection
