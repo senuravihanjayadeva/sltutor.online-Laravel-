@@ -282,7 +282,7 @@
                                                     {!!Form::open(['action' => ['PostsController@destroy',$post->id], 'method' => 'POST' ]) !!}
 
                                                     {{Form::hidden('_method', 'DELETE')}}
-                                                    {{Form::submit('Remove',['class' => 'btn btn-default btn-sm'])}}
+                                                    {{Form::submit('Remove',['class' => 'btn btn-default btn-sm','style' => 'color:black'])}}
                 
                                                     {!!Form::close() !!}
                                                 </a>
