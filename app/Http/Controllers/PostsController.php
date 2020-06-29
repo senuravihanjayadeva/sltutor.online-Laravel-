@@ -79,12 +79,9 @@ class PostsController extends Controller
             'level' => 'required',
             'gender' => 'required',
             'subject' => 'required',
-            'description' => 'required',
             'price' => 'required',
             'district' => 'required',
             'town' => 'required',
-            'email' => 'required',
-            'mobile' => 'required',
             'medium' => 'required',
             'tutiontype' => 'required',
             'cover_image' => 'image|nullable',
@@ -107,7 +104,14 @@ class PostsController extends Controller
             //upload image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+
+            if ($request->input('gender') == "Male") {
+                $fileNameToStore = 'male.png';
+            } else if ($request->input('gender') == "Female") {
+                $fileNameToStore = 'female.png';
+            } else {
+                $fileNameToStore = 'noimage.jpg';
+            }
         }
 
         $MediumString = implode(",", $request->get('medium'));
@@ -203,12 +207,9 @@ class PostsController extends Controller
             'level' => 'required',
             'gender' => 'required',
             'subject' => 'required',
-            'description' => 'required',
             'price' => 'required',
             'district' => 'required',
             'town' => 'required',
-            'email' => 'required',
-            'mobile' => 'required',
             'medium' => 'required',
             'tutiontype' => 'required',
             'cover_image' => 'image|nullable',
@@ -231,7 +232,13 @@ class PostsController extends Controller
             //upload image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            if ($request->input('gender') == "Male") {
+                $fileNameToStore = 'male.png';
+            } else if ($request->input('gender') == "Female") {
+                $fileNameToStore = 'female.png';
+            } else {
+                $fileNameToStore = 'noimage.jpg';
+            }
         }
 
         //Create Post

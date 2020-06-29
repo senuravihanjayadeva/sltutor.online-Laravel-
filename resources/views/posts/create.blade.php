@@ -62,6 +62,9 @@
                             <strong> 
                                 {{ Form::label('fullName','Full Name') }}
                             </strong>
+                            <span style="color: red">
+                                *required
+                            </span>
                             {{ Form::text('fullName','',['class' => 'form-control']) }}
                             
                         </div>
@@ -73,6 +76,9 @@
                             <strong> 
                                 {{ Form::label('Occupation','Occupation') }}
                             </strong>
+                            <span style="color: red">
+                                *required
+                            </span>
                             {{ Form::text('Occupation','',['class' => 'form-control']) }}
                         
                         </div>
@@ -85,6 +91,9 @@
                             <strong>
                                 {{ Form::label('Qualification','Qualification') }}
                             </strong>
+                            <span style="color: red">
+                                *required
+                            </span>
                             {{ Form::text('Qualification','',['class' => 'form-control']) }}
                         
                         
@@ -96,6 +105,9 @@
                             <strong> 
                                 {{ Form::label('age','Age') }}
                             </strong>
+                            <span style="color: red">
+                                *required
+                            </span>
                             {{ Form::number('age','',['class' => 'form-control']) }}
                         
                         </div>
@@ -103,13 +115,21 @@
                 </div>
 
                 <div class="form-row">
+                    <div class="col-sm-12 col-md-12">
+                    <span style="color: red">
+                        *required
+                    </span>
+                    </div>
+                 
                     <div class="col-sm-12 col-md-6">
+                        
                         <div class="form-group">
                             
                             {{ Form::radio('level', 'Advanced Level',false,['onclick' => 'checkfunc(0)']) }}
                             <strong> 
                                 {{ Form::label('level','Advanced Level') }}
                             </strong>
+                         
                         
                         </div>
                     </div>
@@ -120,6 +140,7 @@
                             <strong> 
                                 {{ Form::label('level','Ordinary Level') }}
                             </strong>
+                           
                         
                         </div>
                     </div>
@@ -133,7 +154,10 @@
 
                     <strong> 
                         {{ Form::label('subject','Subject') }}
-                    </strong>   
+                    </strong>  
+                    <span style="color: red">
+                        *required
+                    </span> 
 
                     {{ Form::select('subject', [
                         'Combined Maths' => 'Combined Maths', 
@@ -178,6 +202,9 @@
                     <strong> 
                         {{ Form::label('gender','Gender') }}
                     </strong>
+                    <span style="color: red">
+                        *required
+                    </span>
                
                     {{ Form::select('gender', ['Male' => 'Male', 'Female' => 'Female' ], null,['class' => 'form-control' , 'placeholder' => 'Pick Gender...']) }}
                 
@@ -240,7 +267,9 @@
                     <strong> 
                         {{ Form::label('district','District') }}
                     </strong>                 
-                    
+                    <span style="color: red">
+                        *required
+                    </span>
                     
                     {{ Form::select('district', [
 
@@ -282,6 +311,9 @@
                     <strong> 
                         {{ Form::label('town','Town') }}
                     </strong>
+                    <span style="color: red">
+                        *required
+                    </span>
                     {{ Form::text('town','',['class' => 'form-control']) }}
                 
                 </div>
@@ -295,7 +327,11 @@
             
                 <strong> 
                     {{ Form::label('medium','Language') }}
-                </strong> <br>  
+                </strong>
+                <span style="color: red">
+                    *required
+                </span>
+                 <br>  
 
             {{ Form::checkbox('medium[]', 'Sinhala Medium') }}
            
@@ -322,7 +358,10 @@
             
             <strong> 
                 {{ Form::label('tuitiontype','Tuition Type') }}
-            </strong>   <br>
+            </strong>  <span style="color: red">
+                *required
+            </span>
+              <br>
 
             {{ Form::checkbox('tutiontype[]', 'Individual') }}
            
@@ -349,6 +388,9 @@
             <strong> 
                 {{ Form::label('price','Tuition Fee') }}
             </strong> 
+            <span style="color: red">
+                *required
+            </span>
             {{ Form::number('price','',['class' => 'form-control']) }} LKR
         
         </div>
