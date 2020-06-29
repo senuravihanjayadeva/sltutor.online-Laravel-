@@ -87,7 +87,7 @@
 
                  <!--For display error message or success messages-->
 
-                 @include('inc.messages');
+                 @include('inc.messages')
 
                 <div class="row justify-content-center">
                     <div class="col-auto col-md-8 pulse animated">
